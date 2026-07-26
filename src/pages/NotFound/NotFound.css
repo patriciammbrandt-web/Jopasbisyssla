@@ -18,7 +18,8 @@
   margin-bottom: var(--space-2);
 }
 .notfound__logo .logo__img {
-  height: 110px;
+  height: 128px;
+  width: 128px;
 }
 .notfound__logo .logo__emblem {
   width: 90px;

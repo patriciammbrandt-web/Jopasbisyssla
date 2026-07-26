@@ -5,11 +5,14 @@
   line-height: 1;
 }
 
-/* ---- Riktig logga (bild) ---- */
+/* ---- Riktig logga (bild) – alltid rund ---- */
 .logo__img {
-  height: 72px;
-  width: auto;
-  object-fit: contain;
+  display: block;
+  height: 84px;
+  width: 84px;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 50%;
   transition: transform var(--dur) var(--ease-out);
   transform-origin: center;
 }
@@ -18,13 +21,16 @@
 }
 
 .logo--sm .logo__img {
-  height: 56px;
+  height: 64px;
+  width: 64px;
 }
 .logo--md .logo__img {
-  height: 72px;
+  height: 84px;
+  width: 84px;
 }
 .logo--lg .logo__img {
-  height: 104px;
+  height: 120px;
+  width: 120px;
 }
 
 /* ---- Fallback-emblem (SVG) ---- */

@@ -57,8 +57,8 @@ export default function Logo({
         className="logo__img"
         src="/images/logo.png"
         alt="Jopas Honung"
-        width={523}
-        height={481}
+        width={528}
+        height={528}
         decoding="async"
         onError={() => setFailed(true)}
       />
