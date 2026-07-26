@@ -7,7 +7,7 @@
 
 /* ---- Riktig logga (bild) ---- */
 .logo__img {
-  height: 52px;
+  height: 72px;
   width: auto;
   object-fit: contain;
   transition: transform var(--dur) var(--ease-out);
@@ -18,13 +18,13 @@
 }
 
 .logo--sm .logo__img {
-  height: 42px;
+  height: 56px;
 }
 .logo--md .logo__img {
-  height: 52px;
+  height: 72px;
 }
 .logo--lg .logo__img {
-  height: 84px;
+  height: 104px;
 }
 
 /* ---- Fallback-emblem (SVG) ---- */

@@ -1,17 +1,16 @@
 import Button from "../../components/Button/Button";
-import Media from "../../components/Media/Media";
 import Reveal from "../../components/Reveal/Reveal";
 import PageHeader from "../../components/PageHeader/PageHeader";
 import SectionHeading from "../../components/SectionHeading/SectionHeading";
 import { usePageMeta } from "../../hooks/usePageMeta";
-import { RETAILERS, MARKETS, CONTACT } from "../../data/site";
+import { RETAILERS, HONEY_KIOSKS, MARKETS, CONTACT } from "../../data/site";
 import "./Retailers.css";
 
 export default function Retailers() {
   usePageMeta({
     title: "Återförsäljare",
     description:
-      "Här hittar du Jopas Honung – gårdsbutiker, lanthandlar, caféer och marknader på Söderåsen och i Skåne.",
+      "Här hittar du Jopas Honung – gårdsbutiker, caféer, specialbutiker och självbetjäningskiosker i Skåne.",
   });
 
   return (
@@ -19,7 +18,7 @@ export default function Retailers() {
       <PageHeader
         eyebrow="Återförsäljare"
         title="Var du hittar vår honung"
-        intro="Honungen säljs direkt från gården, hos utvalda handlare och på marknader runt om i Skåne. Här är platserna där du kan få tag på den – och möta oss personligen."
+        intro="Honungen säljs hos utvalda handlare runt om i Skåne – och i våra självbetjäningskiosker. Här är platserna där du kan få tag på den."
       />
 
       {/* Butiker */}
@@ -42,6 +41,17 @@ export default function Retailers() {
                     {r.location}
                   </p>
                   {r.note && <p className="retailer-card__note">{r.note}</p>}
+                  {r.url && (
+                    <a
+                      href={r.url}
+                      className="retailer-card__link"
+                      target="_blank"
+                      rel="noreferrer noopener"
+                    >
+                      Besök webbplats
+                      <span aria-hidden="true"> →</span>
+                    </a>
+                  )}
                 </article>
               </Reveal>
             ))}
@@ -49,36 +59,42 @@ export default function Retailers() {
         </div>
       </section>
 
-      {/* Gårdsförsäljning / självservering */}
-      <section className="section retailers__farm-section">
-        <div className="container retailers__farm">
-          <Reveal variant="left" className="retailers__farm-media">
-            <Media
-              src="/images/photos/photo-27.png"
-              alt="Rött honungsskåp vid vägen där honung säljs med Swish från egen bigård"
-              label="Självservering vid gården"
-              ratio="4/5"
-              rounded="lg"
-            />
-          </Reveal>
-          <div className="retailers__farm-copy">
-            <SectionHeading
-              eyebrow="Dygnet runt"
-              title="Honung säljes – direkt från bigården"
-              description="Vid gården står vårt lilla honungsskåp framme. Öppna luckan, ta en burk och betala enkelt med Swish. Färsk honung precis där bina flyger, när det passar dig."
-            />
-            <Reveal variant="up" delay={140}>
-              <ul className="retailers__farm-points">
-                <li>Öppet när du är förbi – ingen kassa, ingen kö</li>
-                <li>Betala smidigt med Swish direkt i skåpet</li>
-                <li>Honung från egen bigård, säsong för säsong</li>
-              </ul>
-            </Reveal>
-            <Reveal variant="up" delay={200}>
-              <Button to="/kontakt" variant="ghost">
-                Fråga efter vägbeskrivning
-              </Button>
-            </Reveal>
+      {/* Honungskiosker */}
+      <section className="section retailers__kiosks-section">
+        <div className="container">
+          <SectionHeading
+            eyebrow="Självbetjäning"
+            title="Våra honungskiosker"
+            description="Fyll på när det passar dig – öppet dygnet runt vid våra honungskiosker med självbetjäning."
+          />
+          <div className="retailers__kiosks">
+            {HONEY_KIOSKS.map((k, i) => (
+              <Reveal key={k.id} variant="up" delay={i * 70}>
+                <article className="kiosk-card">
+                  <span className="kiosk-card__badge">
+                    {k.note ?? "Självbetjäning"}
+                  </span>
+                  <h3 className="kiosk-card__name">{k.name}</h3>
+                  <p className="kiosk-card__loc">
+                    <span className="kiosk-card__pin" aria-hidden="true">
+                      ◈
+                    </span>
+                    {k.location}
+                  </p>
+                  {k.mapsUrl && (
+                    <a
+                      href={k.mapsUrl}
+                      className="kiosk-card__link"
+                      target="_blank"
+                      rel="noreferrer noopener"
+                    >
+                      Visa på karta
+                      <span aria-hidden="true"> →</span>
+                    </a>
+                  )}
+                </article>
+              </Reveal>
+            ))}
           </div>
         </div>
       </section>

@@ -47,7 +47,6 @@ export const PRODUCTS: Product[] = [
     description:
       "Årets första skörd med inslag av raps och tidiga vårblommor. Krämig konsistens och en rund, mild sötma som passar lika bra på mackan som i teet.",
     notes: ["Ljus färg", "Krämig", "Mild raps"],
-    image: "/images/photos/photo-21.png",
   },
   {
     id: "sommar",
@@ -57,7 +56,6 @@ export const PRODUCTS: Product[] = [
     description:
       "Slungad när sommarängarna står i full blom. Klöver, lind och vilda örter ger en djupare, gyllene honung med tydlig karaktär.",
     notes: ["Gyllene", "Fyllig", "Blomsteräng"],
-    image: "/images/photos/photo-09.png",
   },
   {
     id: "ljunghonung",
@@ -67,7 +65,6 @@ export const PRODUCTS: Product[] = [
     description:
       "Vår mest karaktärsfulla honung, samlad från ljungen på åsens hedar. Mörk, nästan geléaktig med en kryddig, lätt beska. Fås i begränsad mängd.",
     notes: ["Mörk", "Kryddig", "Begränsad"],
-    image: "/images/photos/photo-04.png",
   },
 ];
 
@@ -115,35 +112,101 @@ export interface Retailer {
   type: string;
   location: string;
   note?: string;
+  url?: string;
 }
 
 export const RETAILERS: Retailer[] = [
   {
-    id: "gardsbod",
-    name: "Gårdsboden vid Söderåsen",
+    id: "skanehill",
+    name: "Skånehill gårdsbutik",
     type: "Gårdsbutik",
-    location: "Söderåsen",
-    note: "Självplock och färsk honung direkt från källaren.",
+    location: "Kvidinge",
+    url: "https://skanehill.se/",
   },
   {
-    id: "lanthandel",
-    name: "Åsens Lanthandel",
-    type: "Lanthandel",
-    location: "Skåne",
-    note: "Hela sortimentet, säsong för säsong.",
+    id: "sannagarden",
+    name: "Sånnagården",
+    type: "Gårdsbutik",
+    location: "Kvidinge",
+    url: "https://www.sannagarden.se/",
   },
   {
-    id: "delikatess",
-    name: "Skånska Delikatesser",
-    type: "Delikatessbutik",
+    id: "sigvard",
+    name: "Sigvard Månsgård",
+    type: "Gårdsbutik",
+    location: "Åstorp",
+    url: "https://sigvardmansgard.se/",
+  },
+  {
+    id: "bruket",
+    name: "Bruket bageri & café",
+    type: "Bageri & café",
     location: "Helsingborg",
+    url: "https://bruketkaffebar.se/",
   },
   {
-    id: "cafe",
-    name: "Café Bikupan",
-    type: "Café",
-    location: "Klippan",
-    note: "Servering med vår honung i fikat.",
+    id: "gyegarden",
+    name: "Gyegårdens äppelodling",
+    type: "Äppelodling",
+    location: "Söderåsen",
+    url: "https://gyegarden.se/",
+  },
+  {
+    id: "kullabygden",
+    name: "Kullabygdens shop",
+    type: "Butik",
+    location: "Åstorp",
+    url: "https://www.kullabygden.se/",
+  },
+  {
+    id: "soderports",
+    name: "Söderports te och kaffe",
+    type: "Specialbutik",
+    location: "Helsingborg",
+    url: "https://www.soderportskaffeochte.se/",
+  },
+  {
+    id: "blomsterstudion",
+    name: "Blomsterstudion Lina Melin",
+    type: "Blomsterbutik",
+    location: "Åstorp",
+    url: "https://www.blomsterstudion.se/",
+  },
+];
+
+export interface HoneyKiosk {
+  id: string;
+  name: string;
+  location: string;
+  note?: string;
+  mapsUrl?: string;
+}
+
+/** Honungskiosker med självbetjäning */
+export const HONEY_KIOSKS: HoneyKiosk[] = [
+  {
+    id: "lindvagen",
+    name: "Lindvägen",
+    location: "Åstorp",
+    note: "Självbetjäning",
+    mapsUrl:
+      "https://www.google.com/maps/search/?api=1&query=Lindv%C3%A4gen+Åstorp",
+  },
+  {
+    id: "asa",
+    name: "Åsa Jutegårdsväg",
+    location: "Åsa",
+    note: "Självbetjäning",
+    mapsUrl:
+      "https://www.google.com/maps/search/?api=1&query=%C3%85sa+Juteg%C3%A5rdsv%C3%A4g+%C3%85sa",
+  },
+  {
+    id: "padel",
+    name: "Padel & gym",
+    location: "Åstorp",
+    note: "Självbetjäning",
+    mapsUrl:
+      "https://www.google.com/maps/search/?api=1&query=Padel+gym+Åstorp",
   },
 ];
 

@@ -48,6 +48,17 @@
   font-size: var(--fs-sm);
   color: var(--text-muted);
 }
+.retailer-card__link {
+  margin-top: auto;
+  padding-top: var(--space-3);
+  font-size: var(--fs-sm);
+  font-weight: 600;
+  color: var(--color-honey-strong);
+}
+.retailer-card__link:hover {
+  color: var(--color-ink);
+  text-decoration: underline;
+}
 
 @media (min-width: 640px) {
   .retailers__grid {
@@ -60,50 +71,79 @@
   }
 }
 
-/* Gårdsförsäljning / självservering */
-.retailers__farm {
+/* Honungskiosker */
+.retailers__kiosks-section {
+  background: var(--bg-elevated);
+  border-block: 1px solid var(--border-subtle);
+}
+.retailers__kiosks {
   display: grid;
   grid-template-columns: 1fr;
-  gap: var(--space-6);
-  align-items: center;
+  gap: var(--space-4);
+  margin-top: var(--space-6);
 }
-.retailers__farm-media {
-  max-width: 420px;
-}
-.retailers__farm-points {
+.kiosk-card {
   display: flex;
   flex-direction: column;
   gap: var(--space-2);
-  margin-top: var(--space-5);
+  height: 100%;
+  padding: var(--space-5);
+  background: var(--bg-panel);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-sm);
+  transition: transform var(--dur) var(--ease-out),
+    box-shadow var(--dur) var(--ease-out), border-color var(--dur) var(--ease-out);
 }
-.retailers__farm-points li {
-  position: relative;
-  padding-left: var(--space-5);
-  font-size: var(--fs-md);
+.kiosk-card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-md);
+  border-color: var(--color-honey-soft);
+}
+.kiosk-card__badge {
+  align-self: flex-start;
+  padding: 0.25rem 0.7rem;
+  font-size: var(--fs-xs);
+  font-weight: 600;
+  letter-spacing: var(--ls-wide);
+  text-transform: uppercase;
+  color: var(--color-bark);
+  background: var(--grad-honey);
+  border-radius: var(--radius-pill);
+}
+.kiosk-card__name {
+  font-size: var(--fs-lg);
+}
+.kiosk-card__loc {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: var(--fs-sm);
   color: var(--text-secondary);
 }
-.retailers__farm-points li::before {
-  content: "";
-  position: absolute;
-  left: 0;
-  top: 0.55em;
-  width: 10px;
-  height: 10px;
-  border-radius: 50%;
-  background: var(--grad-honey);
-  box-shadow: 0 0 0 4px rgba(236, 200, 74, 0.16);
+.kiosk-card__pin {
+  color: var(--color-honey);
+}
+.kiosk-card__link {
+  margin-top: auto;
+  padding-top: var(--space-3);
+  font-size: var(--fs-sm);
+  font-weight: 600;
+  color: var(--color-honey-strong);
+}
+.kiosk-card__link:hover {
+  color: var(--color-ink);
+  text-decoration: underline;
 }
 
-@media (min-width: 860px) {
-  .retailers__farm {
-    grid-template-columns: 0.9fr 1.1fr;
-    gap: var(--space-8);
+@media (min-width: 640px) {
+  .retailers__kiosks {
+    grid-template-columns: repeat(3, 1fr);
   }
 }
 
 /* Marknader */
 .retailers__markets-section {
-  background: var(--bg-elevated);
   border-block: 1px solid var(--border-subtle);
 }
 .retailers__markets {
