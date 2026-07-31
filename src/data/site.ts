@@ -113,6 +113,7 @@ export interface Retailer {
   location: string;
   note?: string;
   url?: string;
+  logo?: string;
 }
 
 export const RETAILERS: Retailer[] = [
@@ -122,6 +123,7 @@ export const RETAILERS: Retailer[] = [
     type: "Gårdsbutik",
     location: "Kvidinge",
     url: "https://skanehill.se/",
+    logo: "/images/retailers/skanehill.png",
   },
   {
     id: "sannagarden",
@@ -129,6 +131,7 @@ export const RETAILERS: Retailer[] = [
     type: "Gårdsbutik",
     location: "Kvidinge",
     url: "https://www.sannagarden.se/",
+    logo: "/images/retailers/sannagarden.svg",
   },
   {
     id: "sigvard",
@@ -136,6 +139,7 @@ export const RETAILERS: Retailer[] = [
     type: "Gårdsbutik",
     location: "Åstorp",
     url: "https://sigvardmansgard.se/",
+    logo: "/images/retailers/sigvard.png",
   },
   {
     id: "bruket",
@@ -143,6 +147,7 @@ export const RETAILERS: Retailer[] = [
     type: "Bageri & café",
     location: "Helsingborg",
     url: "https://bruketkaffebar.se/",
+    logo: "/images/retailers/bruket.png",
   },
   {
     id: "gyegarden",
@@ -150,6 +155,7 @@ export const RETAILERS: Retailer[] = [
     type: "Äppelodling",
     location: "Söderåsen",
     url: "https://gyegarden.se/",
+    logo: "/images/retailers/gyegarden.png",
   },
   {
     id: "kullabygden",
@@ -157,6 +163,7 @@ export const RETAILERS: Retailer[] = [
     type: "Butik",
     location: "Åstorp",
     url: "https://www.kullabygden.se/",
+    logo: "/images/retailers/kullabygden.svg",
   },
   {
     id: "soderports",
@@ -164,6 +171,7 @@ export const RETAILERS: Retailer[] = [
     type: "Specialbutik",
     location: "Helsingborg",
     url: "https://www.soderportskaffeochte.se/",
+    logo: "/images/retailers/soderports.svg",
   },
   {
     id: "blomsterstudion",
@@ -171,6 +179,7 @@ export const RETAILERS: Retailer[] = [
     type: "Blomsterbutik",
     location: "Åstorp",
     url: "https://www.blomsterstudion.se/",
+    logo: "/images/retailers/blomsterstudion.svg",
   },
 ];
 

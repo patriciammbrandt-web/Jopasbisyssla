@@ -32,6 +32,15 @@ export default function Retailers() {
             {RETAILERS.map((r, i) => (
               <Reveal key={r.id} variant="up" delay={i * 70}>
                 <article className="retailer-card">
+                  {r.logo && (
+                    <div className="retailer-card__logo">
+                      <img
+                        src={r.logo}
+                        alt={`${r.name} logotyp`}
+                        loading="lazy"
+                      />
+                    </div>
+                  )}
                   <span className="retailer-card__type">{r.type}</span>
                   <h3 className="retailer-card__name">{r.name}</h3>
                   <p className="retailer-card__loc">
