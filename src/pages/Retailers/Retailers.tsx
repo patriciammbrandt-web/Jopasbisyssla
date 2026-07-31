@@ -13,6 +13,7 @@ export default function Retailers() {
     title: "Återförsäljare",
     description:
       "Här hittar du Jopas Honung – gårdsbutiker, caféer, specialbutiker och självbetjäningskiosker i Skåne.",
+    path: "/aterforsaljare",
   });
   const { markets } = useMarkets();
 
@@ -82,7 +83,7 @@ export default function Retailers() {
           <div className="retailers__kiosks-layout">
             <Reveal variant="left" className="retailers__kiosks-media">
               <Media
-                src="/images/photos/photo-27.png"
+                src="/images/photos/photo-27.webp"
                 alt="Röd honungskiosk med skylten Honung säljes och Swish-betalning"
                 label="Honungskiosk"
                 ratio="4/5"

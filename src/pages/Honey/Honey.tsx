@@ -21,35 +21,35 @@ const STEPS: Step[] = [
     title: "Binas arbete",
     text: "Allt börjar i blomman. Ett enda bi besöker tusentals blommor per dag och samlar nektar som förvandlas till honung i kupan. Vi ser till att bina har tillgång till rika, giftfria marker – ängar, fruktträd och ljunghedar på åsen.",
     label: "Bina på vaxkakan",
-    img: "/images/photos/photo-32.png",
+    img: "/images/photos/photo-32.webp",
   },
   {
     n: "02",
     title: "Slungning",
     text: "När ramarna är fyllda och honungen lagom mogen lyfter vi dem ur kupan och skattar bort vaxlocken. Ramarna placeras i slungan, där honungen försiktigt centrifugeras ut – utan värme som förstör smaken.",
     label: "Slungning",
-    img: "/images/photos/photo-22.png",
+    img: "/images/photos/photo-22.webp",
   },
   {
     n: "03",
     title: "Silning",
     text: "Den nyslungade honungen silas långsamt genom fina silar för att skilja bort vaxrester och andra partiklar. Vi silar milt och tar oss tid – aldrig genom finfilter som tar bort pollen och karaktär.",
     label: "Silning",
-    img: "/images/photos/photo-23.png",
+    img: "/images/photos/photo-23.webp",
   },
   {
     n: "04",
     title: "Tappning",
     text: "Efter en tids vila tappas honungen på burk för hand. Varje burk fylls, torkas av och förses med etikett i vårt eget lilla tapperi. Inget tillsätts och inget tas bort – det är ren honung, precis som bina gjorde den.",
     label: "Tappning på burk",
-    img: "/images/photos/photo-20.png",
+    img: "/images/photos/photo-20.webp",
   },
   {
     n: "05",
     title: "Kvalitetskontroll",
     text: "Innan honungen får lämna oss kontrollerar vi vattenhalt, konsistens och smak. Bara honung vi själva skulle ställa på frukostbordet får bära vår etikett.",
     label: "Kvalitetskontroll",
-    img: "/images/photos/photo-06.png",
+    img: "/images/photos/photo-06.webp",
   },
 ];
 
@@ -58,6 +58,7 @@ export default function Honey() {
     title: "Honungen",
     description:
       "Från blomma till burk – följ hela processen bakom Jopas Honung: binas arbete, slungning, silning, tappning och kvalitetskontroll.",
+    path: "/honungen",
   });
 
   return (

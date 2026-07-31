@@ -44,6 +44,7 @@ export default function Home() {
     title: "Småskalig svensk honung från Söderåsen",
     description:
       "Jopas Honung – handverksmässigt hanterad, lokalproducerad honung från Söderåsen. Från blomma till burk, med omsorg i varje steg.",
+    path: "/",
   });
   const { markets } = useMarkets();
 
@@ -54,52 +55,46 @@ export default function Home() {
         <div className="hero__bg" aria-hidden="true">
           <img
             className="hero__bg-img"
-            src="/images/photos/photo-24.png"
+            src="/images/photos/photo-24-hero.webp"
             alt=""
+            width={1000}
+            height={750}
             decoding="async"
+            fetchPriority="high"
+            loading="eager"
           />
           <div className="hero__bg-wash" />
         </div>
         <div className="container hero__inner">
           <div className="hero__copy">
-            <Reveal variant="fade">
-              <span className="eyebrow">Söderåsen · Skåne</span>
-            </Reveal>
-            <Reveal variant="up" delay={80}>
-              <h1 className="hero__title">
-                Honung med <em>sinne</em> för det småskaliga
-              </h1>
-            </Reveal>
-            <Reveal variant="up" delay={160}>
-              <p className="hero__lead lead">
-                Våra flitiga bin flyger på Söderåsens sluttningar bort mot
-                Hallandsåsen. Vi är småskaliga producenter som hanterar vår
-                honung på ett hantverksmässigt sätt – från blomma till burk.
-              </p>
-            </Reveal>
-            <Reveal variant="up" delay={240}>
-              <div className="hero__actions">
-                <Button to="/produkter" size="lg">
-                  Se honungen
-                </Button>
-                <Button to="/om-oss" variant="secondary" size="lg">
-                  Vår historia
-                </Button>
-              </div>
-            </Reveal>
-            <Reveal variant="fade" delay={320}>
-              <ul className="hero__trust">
-                <li>
-                  <strong>100%</strong> svensk honung
-                </li>
-                <li>
-                  <strong>Slungad</strong> för hand
-                </li>
-                <li>
-                  <strong>Lokalt</strong> på åsen
-                </li>
-              </ul>
-            </Reveal>
+            <span className="eyebrow">Söderåsen · Skåne</span>
+            <h1 className="hero__title">
+              Honung med <em>sinne</em> för det småskaliga
+            </h1>
+            <p className="hero__lead lead">
+              Våra flitiga bin flyger på Söderåsens sluttningar bort mot
+              Hallandsåsen. Vi är småskaliga producenter som hanterar vår
+              honung på ett hantverksmässigt sätt – från blomma till burk.
+            </p>
+            <div className="hero__actions">
+              <Button to="/produkter" size="lg">
+                Se honungen
+              </Button>
+              <Button to="/om-oss" variant="secondary" size="lg">
+                Vår historia
+              </Button>
+            </div>
+            <ul className="hero__trust">
+              <li>
+                <strong>100%</strong> svensk honung
+              </li>
+              <li>
+                <strong>Slungad</strong> för hand
+              </li>
+              <li>
+                <strong>Lokalt</strong> på åsen
+              </li>
+            </ul>
           </div>
 
           <div className="hero__media">
@@ -152,7 +147,7 @@ export default function Home() {
         <div className="container about-strip__grid">
           <Reveal variant="left">
             <Media
-              src="/images/photos/photo-29.png"
+              src="/images/photos/photo-29.webp"
               alt="Jonatan och Patricia vid marknadsståndet framför gården"
               label="Jonatan & Patricia"
               ratio="4/3"

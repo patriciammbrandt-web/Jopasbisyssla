@@ -30,6 +30,7 @@ export default function About() {
     title: "Om oss",
     description:
       "Historien bakom Jopas Honung – en småskalig familjebiodling på Söderåsen med hantverket och binas välmående i centrum.",
+    path: "/om-oss",
   });
 
   return (
@@ -45,7 +46,7 @@ export default function About() {
         <div className="container about__story">
           <Reveal variant="left">
             <Media
-              src="/images/photos/photo-24.png"
+              src="/images/photos/photo-24.webp"
               alt="Biodlaren inspekterar en ram med bin vid kuporna i trädgården"
               label="Vid kuporna"
               ratio="4/5"
@@ -133,7 +134,7 @@ export default function About() {
         <div className="container about__gallery">
           <Reveal variant="up">
             <Media
-              src="/images/photos/photo-30.png"
+              src="/images/photos/photo-30.webp"
               alt="Ett bisamhälle klänger tätt samlat vid kupan"
               label="Ett samhälle samlas"
               ratio="1/1"
@@ -142,7 +143,7 @@ export default function About() {
           </Reveal>
           <Reveal variant="up" delay={120}>
             <Media
-              src="/images/photos/photo-31.png"
+              src="/images/photos/photo-31.webp"
               alt="Bigårdens kupor står uppradade på Söderåsens sluttningar"
               label="Bigården på åsen"
               ratio="1/1"

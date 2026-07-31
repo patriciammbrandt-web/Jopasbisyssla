@@ -22,6 +22,7 @@ export default function Contact() {
     title: "Kontakt",
     description:
       "Kontakta Jopas Honung – ring, mejla eller skicka ett meddelande. Vi svarar gärna på frågor om honung, bisamhällen och pollinering.",
+    path: "/kontakt",
   });
 
   const [form, setForm] = useState<FormState>(EMPTY);

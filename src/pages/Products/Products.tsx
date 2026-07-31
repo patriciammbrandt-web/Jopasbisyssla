@@ -12,6 +12,7 @@ export default function Products() {
     title: "Produkter & Tjänster",
     description:
       "Honung, pollinering och bisamhällen från Jopas Honung. Utforska sortimentet och våra tjänster – lokalproducerat på Söderåsen.",
+    path: "/produkter",
   });
 
   return (

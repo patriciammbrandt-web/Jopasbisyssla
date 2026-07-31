@@ -4,7 +4,7 @@ import { usePageMeta } from "../../hooks/usePageMeta";
 import "./NotFound.css";
 
 export default function NotFound() {
-  usePageMeta({ title: "Sidan hittades inte" });
+  usePageMeta({ title: "Sidan hittades inte", noIndex: true });
 
   return (
     <section className="notfound">

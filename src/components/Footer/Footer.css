@@ -44,7 +44,7 @@
 .footer__heading {
   font-family: var(--font-body);
   font-size: var(--fs-xs);
-  font-weight: 700;
+  font-weight: 600;
   letter-spacing: var(--ls-wide);
   text-transform: uppercase;
   color: var(--color-honey-soft);

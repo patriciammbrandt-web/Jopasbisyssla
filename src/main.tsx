@@ -1,33 +1,84 @@
-import { StrictMode } from "react";
+import { StrictMode, lazy, Suspense } from "react";
 import { createRoot } from "react-dom/client";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import App from "./App";
 import Home from "./pages/Home/Home";
-import About from "./pages/About/About";
-import Honey from "./pages/Honey/Honey";
-import Products from "./pages/Products/Products";
-import Retailers from "./pages/Retailers/Retailers";
-import Contact from "./pages/Contact/Contact";
-import NotFound from "./pages/NotFound/NotFound";
-import MarketsAdmin from "./pages/Admin/MarketsAdmin";
 import "./styles/globals.css";
+
+const About = lazy(() => import("./pages/About/About"));
+const Honey = lazy(() => import("./pages/Honey/Honey"));
+const Products = lazy(() => import("./pages/Products/Products"));
+const Retailers = lazy(() => import("./pages/Retailers/Retailers"));
+const Contact = lazy(() => import("./pages/Contact/Contact"));
+const NotFound = lazy(() => import("./pages/NotFound/NotFound"));
+const MarketsAdmin = lazy(() => import("./pages/Admin/MarketsAdmin"));
+
+function LazyPage({ children }: { children: React.ReactNode }) {
+  return <Suspense fallback={null}>{children}</Suspense>;
+}
 
 const router = createBrowserRouter([
   {
     path: "/admin/marknader",
-    element: <MarketsAdmin />,
+    element: (
+      <LazyPage>
+        <MarketsAdmin />
+      </LazyPage>
+    ),
   },
   {
     path: "/",
     element: <App />,
     children: [
       { index: true, element: <Home /> },
-      { path: "om-oss", element: <About /> },
-      { path: "honungen", element: <Honey /> },
-      { path: "produkter", element: <Products /> },
-      { path: "aterforsaljare", element: <Retailers /> },
-      { path: "kontakt", element: <Contact /> },
-      { path: "*", element: <NotFound /> },
+      {
+        path: "om-oss",
+        element: (
+          <LazyPage>
+            <About />
+          </LazyPage>
+        ),
+      },
+      {
+        path: "honungen",
+        element: (
+          <LazyPage>
+            <Honey />
+          </LazyPage>
+        ),
+      },
+      {
+        path: "produkter",
+        element: (
+          <LazyPage>
+            <Products />
+          </LazyPage>
+        ),
+      },
+      {
+        path: "aterforsaljare",
+        element: (
+          <LazyPage>
+            <Retailers />
+          </LazyPage>
+        ),
+      },
+      {
+        path: "kontakt",
+        element: (
+          <LazyPage>
+            <Contact />
+          </LazyPage>
+        ),
+      },
+      {
+        path: "*",
+        element: (
+          <LazyPage>
+            <NotFound />
+          </LazyPage>
+        ),
+      },
     ],
   },
 ]);

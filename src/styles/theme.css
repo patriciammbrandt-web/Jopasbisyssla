@@ -46,8 +46,8 @@
   --grad-dark: linear-gradient(160deg, #1d3d4e 0%, #16323f 100%);
 
   /* ---- Typografi ---- */
-  --font-display: "Fraunces", "Georgia", "Times New Roman", serif;
-  --font-body: "Inter", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --font-display: "Fraunces", "Iowan Old Style", "Palatino Linotype", "Book Antiqua", Georgia, serif;
+  --font-body: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
 
   /* typescale ~1.25 (major third) */
   --fs-xs: 0.78rem;

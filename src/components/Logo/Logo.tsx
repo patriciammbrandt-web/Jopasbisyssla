@@ -11,10 +11,10 @@ interface LogoProps {
 
 /**
  * Varumärkes-logga för Jopas Honung.
- * Använder kundens runda emblem (/public/images/logo.png). Saknas filen
+ * Använder kundens runda emblem (/public/images/logo.webp). Saknas filen
  * (t.ex. innan den lagts in) visas ett craftat emblem + ordmärke i stället,
  * så att loggan aldrig blir en trasig bild. Byts automatiskt till fotot
- * så fort logo.png finns på plats.
+ * så fort logo.webp finns på plats.
  */
 export default function Logo({
   size = "md",
@@ -55,7 +55,7 @@ export default function Logo({
     <span className={`logo logo--${size} ${className}`.trim()}>
       <img
         className="logo__img"
-        src="/images/logo.png"
+        src="/images/logo.webp"
         alt="Jopas Honung"
         width={528}
         height={528}

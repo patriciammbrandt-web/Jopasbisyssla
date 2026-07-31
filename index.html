@@ -3,8 +3,8 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="icon" type="image/png" href="/images/logo.png" />
-    <link rel="apple-touch-icon" href="/images/logo.png" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="apple-touch-icon" href="/images/logo.webp" />
 
     <title>Jopas Honung – Småskalig svensk honung från Söderåsen</title>
     <meta
@@ -13,6 +13,7 @@
     />
     <meta name="theme-color" content="#EFE6C6" />
     <meta name="author" content="Jopas bisyssla" />
+    <meta name="robots" content="index, follow" />
     <link rel="canonical" href="https://www.jopashonung.se/" />
 
     <!-- Open Graph -->
@@ -25,7 +26,9 @@
       content="Handverksmässigt hanterad, lokalproducerad honung från Söderåsen. Slungad, silad och tappad med omsorg av en småskalig biodling."
     />
     <meta property="og:url" content="https://www.jopashonung.se/" />
-    <meta property="og:image" content="/images/og-image.jpg" />
+    <meta property="og:image" content="https://www.jopashonung.se/images/og-image.jpg" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
 
     <!-- Twitter -->
     <meta name="twitter:card" content="summary_large_image" />
@@ -34,15 +37,37 @@
       name="twitter:description"
       content="Handverksmässigt hanterad, lokalproducerad honung från Söderåsen."
     />
-    <meta name="twitter:image" content="/images/og-image.jpg" />
+    <meta name="twitter:image" content="https://www.jopashonung.se/images/og-image.jpg" />
 
-    <!-- Fonts: Fraunces (crafted serif display) + Inter (clean sans body) -->
+    <!-- LCP: förladda hero-bilden så den inte väntar på JS -->
+    <link
+      rel="preload"
+      as="image"
+      href="/images/photos/photo-24-hero.webp"
+      type="image/webp"
+      fetchpriority="high"
+    />
+
+    <!-- Fonts: async så de inte blockerar FCP (systemfont som fallback) -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,400;1,9..144,500&family=Inter:wght@400;500;600;700&display=swap"
-      rel="stylesheet"
+      rel="preload"
+      as="style"
+      href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,600;1,9..144,400&family=Inter:wght@400;500;600&display=swap"
     />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,600;1,9..144,400&family=Inter:wght@400;500;600&display=swap"
+      rel="stylesheet"
+      media="print"
+      onload="this.media='all'"
+    />
+    <noscript>
+      <link
+        href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,600;1,9..144,400&family=Inter:wght@400;500;600&display=swap"
+        rel="stylesheet"
+      />
+    </noscript>
 
     <!-- Schema.org Local Business -->
     <script type="application/ld+json">
@@ -51,10 +76,13 @@
         "@type": "LocalBusiness",
         "name": "Jopas Honung",
         "legalName": "Jopas bisyssla",
+        "taxID": "556640-5725",
         "description": "Småskalig biodling på Söderåsens sluttningar mot Hallandsåsen. Handverksmässigt hanterad, svensk honung.",
         "url": "https://www.jopashonung.se/",
         "telephone": "+46709694527",
+        "email": "hej@jopashonung.se",
         "image": "https://www.jopashonung.se/images/og-image.jpg",
+        "logo": "https://www.jopashonung.se/images/logo.webp",
         "priceRange": "$$",
         "areaServed": "Skåne, Sverige",
         "address": {
@@ -62,6 +90,9 @@
           "addressRegion": "Skåne",
           "addressCountry": "SE"
         },
+        "sameAs": [
+          "https://www.instagram.com/jopasbisyssla/"
+        ],
         "makesOffer": {
           "@type": "Offer",
           "itemOffered": {
