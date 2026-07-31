@@ -48,6 +48,7 @@ export default function Footer() {
             </li>
             <li className="footer__muted">{CONTACT.region}</li>
             <li className="footer__muted">{CONTACT.company}</li>
+            <li className="footer__muted">Org.nr {CONTACT.orgNr}</li>
           </ul>
         </div>
       </div>

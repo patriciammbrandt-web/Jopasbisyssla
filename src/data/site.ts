@@ -18,6 +18,7 @@ export const NAV_ITEMS: NavItem[] = [
 
 export const CONTACT = {
   company: "Jopas bisyssla",
+  orgNr: "556640-5725",
   brand: "Jopas Honung",
   phone: "0709 – 69 45 27",
   phoneHref: "tel:+46709694527",

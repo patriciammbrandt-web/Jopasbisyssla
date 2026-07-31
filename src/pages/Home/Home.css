@@ -20,19 +20,34 @@
   height: 100%;
   object-fit: cover;
   object-position: center 35%;
-  /* Lite mer foto syns igenom — justera 0.35–0.55 efter smak. */
-  opacity: 0.55;
+  opacity: 0.58;
   transform: scale(1.04);
+  /* Fadar ut mot botten — synlig till marquee, sedan mjuk övergång till sidan. */
+  -webkit-mask-image: linear-gradient(
+    to bottom,
+    #000 0%,
+    #000 58%,
+    rgba(0, 0, 0, 0.55) 78%,
+    transparent 100%
+  );
+  mask-image: linear-gradient(
+    to bottom,
+    #000 0%,
+    #000 58%,
+    rgba(0, 0, 0, 0.55) 78%,
+    transparent 100%
+  );
 }
 .hero__bg-wash {
   position: absolute;
   inset: 0;
-  /* Samma varma ton som tidigare, men lättare så grönskan syns. */
+  /* Lättare upptill så fotot syns, solid cream under marquee. */
   background: linear-gradient(
     180deg,
-    rgba(251, 247, 236, 0.78) 0%,
-    rgba(246, 239, 216, 0.72) 50%,
-    rgba(246, 239, 216, 0.84) 100%
+    rgba(251, 247, 236, 0.62) 0%,
+    rgba(246, 239, 216, 0.48) 42%,
+    rgba(246, 239, 216, 0.72) 72%,
+    var(--color-cream) 100%
   );
 }
 .hero__bg-wash::before {
@@ -50,21 +65,6 @@
     rgba(242, 198, 97, 0) 65%
   );
   filter: blur(10px);
-}
-.hero__bg-wash::after {
-  content: "";
-  position: absolute;
-  bottom: -30%;
-  left: -15%;
-  width: 50vw;
-  height: 50vw;
-  max-width: 560px;
-  max-height: 560px;
-  background: radial-gradient(
-    circle,
-    rgba(176, 153, 123, 0.28) 0%,
-    rgba(176, 153, 123, 0) 68%
-  );
 }
 
 .hero__inner {
