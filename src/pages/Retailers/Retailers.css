@@ -95,11 +95,34 @@
   background: var(--bg-elevated);
   border-block: 1px solid var(--border-subtle);
 }
+.retailers__kiosks-layout {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-6);
+  align-items: start;
+  margin-top: var(--space-6);
+}
+.retailers__kiosks-media {
+  max-width: 420px;
+  margin-inline: auto;
+  width: 100%;
+}
 .retailers__kiosks {
   display: grid;
   grid-template-columns: 1fr;
   gap: var(--space-4);
-  margin-top: var(--space-6);
+}
+
+@media (min-width: 860px) {
+  .retailers__kiosks-layout {
+    grid-template-columns: 0.9fr 1.1fr;
+    gap: var(--space-8);
+    align-items: center;
+  }
+  .retailers__kiosks-media {
+    margin-inline: 0;
+    max-width: none;
+  }
 }
 .kiosk-card {
   display: flex;
@@ -153,12 +176,6 @@
 .kiosk-card__link:hover {
   color: var(--color-ink);
   text-decoration: underline;
-}
-
-@media (min-width: 640px) {
-  .retailers__kiosks {
-    grid-template-columns: repeat(3, 1fr);
-  }
 }
 
 /* Marknader */

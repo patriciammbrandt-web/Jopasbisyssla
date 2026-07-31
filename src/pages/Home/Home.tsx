@@ -5,7 +5,8 @@ import Reveal from "../../components/Reveal/Reveal";
 import SectionHeading from "../../components/SectionHeading/SectionHeading";
 import ProductCard from "../../components/ProductCard/ProductCard";
 import { usePageMeta } from "../../hooks/usePageMeta";
-import { PRODUCTS, MARKETS, CONTACT } from "../../data/site";
+import { PRODUCTS, CONTACT } from "../../data/site";
+import { useMarkets } from "../../hooks/useMarkets";
 import "./Home.css";
 
 const MARQUEE_BASE = [
@@ -44,12 +45,21 @@ export default function Home() {
     description:
       "Jopas Honung – handverksmässigt hanterad, lokalproducerad honung från Söderåsen. Från blomma till burk, med omsorg i varje steg.",
   });
+  const { markets } = useMarkets();
 
   return (
     <div className="home">
       {/* ---------- HERO ---------- */}
       <section className="hero">
-        <div className="hero__bg" aria-hidden="true" />
+        <div className="hero__bg" aria-hidden="true">
+          <img
+            className="hero__bg-img"
+            src="/images/photos/photo-24.png"
+            alt=""
+            decoding="async"
+          />
+          <div className="hero__bg-wash" />
+        </div>
         <div className="container hero__inner">
           <div className="hero__copy">
             <Reveal variant="fade">
@@ -101,7 +111,7 @@ export default function Home() {
                 </Link>
               </div>
               <ul className="hero__markets-list">
-                {MARKETS.slice(0, 3).map((m) => (
+                {markets.slice(0, 3).map((m) => (
                   <li key={m.id} className="hero__market">
                     <span className="hero__market-date">
                       <span className="hero__market-d">{m.date}</span>

@@ -1,9 +1,11 @@
 import Button from "../../components/Button/Button";
+import Media from "../../components/Media/Media";
 import Reveal from "../../components/Reveal/Reveal";
 import PageHeader from "../../components/PageHeader/PageHeader";
 import SectionHeading from "../../components/SectionHeading/SectionHeading";
 import { usePageMeta } from "../../hooks/usePageMeta";
-import { RETAILERS, HONEY_KIOSKS, MARKETS, CONTACT } from "../../data/site";
+import { RETAILERS, HONEY_KIOSKS, CONTACT } from "../../data/site";
+import { useMarkets } from "../../hooks/useMarkets";
 import "./Retailers.css";
 
 export default function Retailers() {
@@ -12,6 +14,7 @@ export default function Retailers() {
     description:
       "Här hittar du Jopas Honung – gårdsbutiker, caféer, specialbutiker och självbetjäningskiosker i Skåne.",
   });
+  const { markets } = useMarkets();
 
   return (
     <div className="retailers">
@@ -76,34 +79,45 @@ export default function Retailers() {
             title="Våra honungskiosker"
             description="Fyll på när det passar dig – öppet dygnet runt vid våra honungskiosker med självbetjäning."
           />
-          <div className="retailers__kiosks">
-            {HONEY_KIOSKS.map((k, i) => (
-              <Reveal key={k.id} variant="up" delay={i * 70}>
-                <article className="kiosk-card">
-                  <span className="kiosk-card__badge">
-                    {k.note ?? "Självbetjäning"}
-                  </span>
-                  <h3 className="kiosk-card__name">{k.name}</h3>
-                  <p className="kiosk-card__loc">
-                    <span className="kiosk-card__pin" aria-hidden="true">
-                      ◈
+          <div className="retailers__kiosks-layout">
+            <Reveal variant="left" className="retailers__kiosks-media">
+              <Media
+                src="/images/photos/photo-27.png"
+                alt="Röd honungskiosk med skylten Honung säljes och Swish-betalning"
+                label="Honungskiosk"
+                ratio="4/5"
+                rounded="lg"
+              />
+            </Reveal>
+            <div className="retailers__kiosks">
+              {HONEY_KIOSKS.map((k, i) => (
+                <Reveal key={k.id} variant="up" delay={i * 70}>
+                  <article className="kiosk-card">
+                    <span className="kiosk-card__badge">
+                      {k.note ?? "Självbetjäning"}
                     </span>
-                    {k.location}
-                  </p>
-                  {k.mapsUrl && (
-                    <a
-                      href={k.mapsUrl}
-                      className="kiosk-card__link"
-                      target="_blank"
-                      rel="noreferrer noopener"
-                    >
-                      Visa på karta
-                      <span aria-hidden="true"> →</span>
-                    </a>
-                  )}
-                </article>
-              </Reveal>
-            ))}
+                    <h3 className="kiosk-card__name">{k.name}</h3>
+                    <p className="kiosk-card__loc">
+                      <span className="kiosk-card__pin" aria-hidden="true">
+                        ◈
+                      </span>
+                      {k.location}
+                    </p>
+                    {k.mapsUrl && (
+                      <a
+                        href={k.mapsUrl}
+                        className="kiosk-card__link"
+                        target="_blank"
+                        rel="noreferrer noopener"
+                      >
+                        Visa på karta
+                        <span aria-hidden="true"> →</span>
+                      </a>
+                    )}
+                  </article>
+                </Reveal>
+              ))}
+            </div>
           </div>
         </div>
       </section>
@@ -117,7 +131,7 @@ export default function Retailers() {
             description="Kom förbi, provsmaka och fyll på skafferiet. Vi har alltid några burkar med oss."
           />
           <div className="retailers__markets">
-            {MARKETS.map((m, i) => (
+            {markets.map((m, i) => (
               <Reveal key={m.id} variant="up" delay={i * 70}>
                 <div className="rmarket">
                   <div className="rmarket__date">

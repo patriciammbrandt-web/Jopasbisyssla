@@ -9,9 +9,14 @@ import Products from "./pages/Products/Products";
 import Retailers from "./pages/Retailers/Retailers";
 import Contact from "./pages/Contact/Contact";
 import NotFound from "./pages/NotFound/NotFound";
+import MarketsAdmin from "./pages/Admin/MarketsAdmin";
 import "./styles/globals.css";
 
 const router = createBrowserRouter([
+  {
+    path: "/admin/marknader",
+    element: <MarketsAdmin />,
+  },
   {
     path: "/",
     element: <App />,
@@ -30,5 +35,5 @@ const router = createBrowserRouter([
 createRoot(document.getElementById("root")!).render(
   <StrictMode>
     <RouterProvider router={router} />
-  </StrictMode>
+  </StrictMode>,
 );

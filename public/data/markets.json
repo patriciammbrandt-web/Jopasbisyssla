@@ -1,0 +1,25 @@
+{
+  "markets": [
+    {
+      "id": "m1",
+      "date": "14 SEP",
+      "day": "Lördag",
+      "title": "Skördemarknad på Söderåsen",
+      "place": "Torget, 10–15"
+    },
+    {
+      "id": "m2",
+      "date": "28 SEP",
+      "day": "Lördag",
+      "title": "Höstmarknad i Klippan",
+      "place": "Centrum, 11–16"
+    },
+    {
+      "id": "m3",
+      "date": "12 OKT",
+      "day": "Söndag",
+      "title": "Bondens marknad",
+      "place": "Helsingborg, 10–14"
+    }
+  ]
+}
