@@ -1,6 +1,9 @@
 {
   "rewrites": [
-    { "source": "/((?!api/).*)", "destination": "/index.html" }
+    {
+      "source": "/((?!api/|robots\\.txt|sitemap\\.xml|llms\\.txt|favicon\\.svg|.*\\..*).*)",
+      "destination": "/index.html"
+    }
   ],
   "headers": [
     {
@@ -22,7 +25,7 @@
       ]
     },
     {
-      "source": "/(.*)\\.(svg|webp|jpg|jpeg|png|woff2)",
+      "source": "/(.*)\\.(svg|webp|jpg|jpeg|png|woff2|txt|xml)",
       "headers": [
         {
           "key": "Cache-Control",

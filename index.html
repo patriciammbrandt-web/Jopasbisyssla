@@ -9,12 +9,13 @@
     <title>Jopas Honung – Småskalig svensk honung från Söderåsen</title>
     <meta
       name="description"
-      content="Jopas Honung är en småskalig biodling på Söderåsens sluttningar mot Hallandsåsen. Handverksmässigt hanterad, svensk honung – slungad, silad och tappad med omsorg."
+      content="Småskalig biodling på Söderåsen. Handverksmässigt hanterad svensk honung – slungad, silad och tappad med omsorg."
     />
     <meta name="theme-color" content="#EFE6C6" />
     <meta name="author" content="Jopas bisyssla" />
     <meta name="robots" content="index, follow" />
     <link rel="canonical" href="https://www.jopashonung.se/" />
+    <link rel="sitemap" type="application/xml" title="Sitemap" href="/sitemap.xml" />
 
     <!-- Open Graph -->
     <meta property="og:type" content="website" />
@@ -23,7 +24,7 @@
     <meta property="og:title" content="Jopas Honung – Småskalig svensk honung från Söderåsen" />
     <meta
       property="og:description"
-      content="Handverksmässigt hanterad, lokalproducerad honung från Söderåsen. Slungad, silad och tappad med omsorg av en småskalig biodling."
+      content="Handverksmässigt hanterad, lokalproducerad honung från Söderåsen. Från blomma till burk."
     />
     <meta property="og:url" content="https://www.jopashonung.se/" />
     <meta property="og:image" content="https://www.jopashonung.se/images/og-image.jpg" />
@@ -39,7 +40,7 @@
     />
     <meta name="twitter:image" content="https://www.jopashonung.se/images/og-image.jpg" />
 
-    <!-- LCP: förladda hero-bilden så den inte väntar på JS -->
+    <!-- LCP: förladda + visa hero innan React mountar -->
     <link
       rel="preload"
       as="image"
@@ -47,8 +48,87 @@
       type="image/webp"
       fetchpriority="high"
     />
+    <style>
+      html,
+      body {
+        margin: 0;
+        background: #f6efd8;
+        color: #16323f;
+        font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
+      }
+      #root .boot-hero {
+        position: relative;
+        min-height: 85vh;
+        overflow: hidden;
+        padding: 5.5rem 1.25rem 2.5rem;
+      }
+      #root .boot-hero__img {
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center 35%;
+        opacity: 0.55;
+      }
+      #root .boot-hero__wash {
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(
+          180deg,
+          rgba(251, 247, 236, 0.62) 0%,
+          rgba(246, 239, 216, 0.48) 42%,
+          #f6efd8 100%
+        );
+      }
+      #root .boot-hero__copy {
+        position: relative;
+        max-width: 40rem;
+        z-index: 1;
+      }
+      #root .boot-hero h1 {
+        font-family: Georgia, "Times New Roman", serif;
+        font-size: clamp(2.4rem, 7vw, 4.5rem);
+        font-weight: 500;
+        line-height: 1.05;
+        margin: 0.75rem 0 0;
+      }
+      #root .boot-hero h1 em {
+        font-style: italic;
+        color: #b0880c;
+      }
+      #root .boot-hero p {
+        margin: 1.25rem 0 0;
+        max-width: 48ch;
+        line-height: 1.65;
+        font-size: 1.05rem;
+      }
+      #root .boot-seo {
+        position: relative;
+        max-width: 40rem;
+        padding: 1.5rem 1.25rem 3rem;
+        line-height: 1.65;
+      }
+      #root .boot-seo h2 {
+        font-family: Georgia, "Times New Roman", serif;
+        font-size: 1.5rem;
+        margin: 1.75rem 0 0.5rem;
+      }
+      #root .boot-seo p {
+        margin: 0.5rem 0 0;
+      }
+      #root .boot-seo nav {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.75rem 1.25rem;
+        margin-top: 1.5rem;
+      }
+      #root .boot-seo a {
+        color: #b0880c;
+      }
+    </style>
 
-    <!-- Fonts: async så de inte blockerar FCP (systemfont som fallback) -->
+    <!-- Fonts: async så de inte blockerar FCP -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -90,9 +170,7 @@
           "addressRegion": "Skåne",
           "addressCountry": "SE"
         },
-        "sameAs": [
-          "https://www.instagram.com/jopasbisyssla/"
-        ],
+        "sameAs": ["https://www.instagram.com/jopasbisyssla/"],
         "makesOffer": {
           "@type": "Offer",
           "itemOffered": {
@@ -105,7 +183,61 @@
     </script>
   </head>
   <body>
-    <div id="root"></div>
+    <!--
+      Crawlbart skal: syns för SEO-botar utan JS och ger tidig LCP-bild.
+      React ersätter #root vid mount.
+    -->
+    <div id="root">
+      <section class="boot-hero" aria-label="Jopas Honung">
+        <img
+          class="boot-hero__img"
+          src="/images/photos/photo-24-hero.webp"
+          alt=""
+          width="1000"
+          height="750"
+          decoding="async"
+          fetchpriority="high"
+        />
+        <div class="boot-hero__wash" aria-hidden="true"></div>
+        <div class="boot-hero__copy">
+          <p>Söderåsen · Skåne</p>
+          <h1>Honung med <em>sinne</em> för det småskaliga</h1>
+          <p>
+            Våra flitiga bin flyger på Söderåsens sluttningar bort mot
+            Hallandsåsen. Vi är småskaliga producenter som hanterar vår
+            honung på ett hantverksmässigt sätt – från blomma till burk.
+          </p>
+        </div>
+      </section>
+
+      <div class="boot-seo">
+        <h2>En bisyssla som blev en passion</h2>
+        <p>
+          Det började med ett par kupor på tomten och en nyfikenhet på binas
+          värld. I dag sköter vi ett växande antal samhällen på åsen – med få
+          kupor, mycket omsorg, och honung vi själva är stolta över.
+        </p>
+        <h2>Honung för varje säsong</h2>
+        <p>
+          Försommarhonung, sommarhonung och ljunghonung – smaken följer
+          blomningen på Söderåsen. All honung är 100 % svensk, slungad för hand
+          och lokalproducerad.
+        </p>
+        <h2>Hitta vår honung</h2>
+        <p>
+          Köp hos återförsäljare i Skåne, träffa oss på marknader eller
+          kontakta Jopas bisyssla (org.nr 556640-5725) för pollinering och
+          bisamhällen.
+        </p>
+        <nav aria-label="Huvudsidor">
+          <a href="/om-oss">Om oss</a>
+          <a href="/honungen">Honungen</a>
+          <a href="/produkter">Produkter</a>
+          <a href="/aterforsaljare">Återförsäljare</a>
+          <a href="/kontakt">Kontakt</a>
+        </nav>
+      </div>
+    </div>
     <script type="module" src="/src/main.tsx"></script>
   </body>
 </html>

@@ -2,3 +2,4 @@ User-agent: *
 Allow: /
 
 Sitemap: https://www.jopashonung.se/sitemap.xml
+Sitemap: https://jopas-bisyssla.vercel.app/sitemap.xml
