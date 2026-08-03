@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import Logo from "../Logo/Logo";
 import Socials from "../Socials/Socials";
-import { NAV_ITEMS, CONTACT } from "../../data/site";
+import { NAV_ITEMS, CONTACT, RETAILER_PARTNERS } from "../../data/site";
 import "./Footer.css";
 
 export default function Footer() {
@@ -51,6 +51,25 @@ export default function Footer() {
             <li className="footer__muted">Org.nr {CONTACT.orgNr}</li>
           </ul>
         </div>
+      </div>
+
+      <div className="container footer__partners">
+        <h3 className="footer__heading">Samarbeten</h3>
+        <ul className="footer__partner-logos">
+          {RETAILER_PARTNERS.filter((p) => p.logo && p.url).map((p) => (
+            <li key={p.id}>
+              <a
+                href={p.url}
+                className={`footer__partner-link footer__partner-link--${p.id}`}
+                target="_blank"
+                rel="noreferrer noopener"
+                aria-label={`${p.name} (öppnas i ny flik)`}
+              >
+                <img src={p.logo} alt="" loading="lazy" />
+              </a>
+            </li>
+          ))}
+        </ul>
       </div>
 
       <div className="container footer__bottom">

@@ -72,6 +72,45 @@
   font-size: var(--fs-sm);
 }
 
+.footer__partners {
+  position: relative;
+  padding-bottom: var(--space-5);
+  border-top: 1px solid rgba(243, 236, 214, 0.12);
+  padding-top: var(--space-5);
+}
+.footer__partner-logos {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-3);
+  margin-top: var(--space-1);
+}
+.footer__partner-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 7.25rem;
+  height: 3rem;
+  padding: 0.45rem 0.6rem;
+  background: var(--color-cream, #f6efd8);
+  border-radius: var(--radius-sm);
+  transition: transform var(--dur) var(--ease-out),
+    opacity var(--dur) var(--ease-out);
+}
+.footer__partner-link:hover {
+  transform: translateY(-2px);
+  opacity: 0.92;
+}
+.footer__partner-link img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  object-position: center;
+}
+.footer__partner-link--sannagarden img {
+  transform: scale(1.28);
+}
+
 .footer__bottom {
   position: relative;
   display: flex;
