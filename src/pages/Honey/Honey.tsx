@@ -19,16 +19,16 @@ const STEPS: Step[] = [
   {
     n: "01",
     title: "Binas arbete",
-    text: "Allt börjar i blomman. Ett enda bi besöker tusentals blommor per dag och samlar nektar som förvandlas till honung i kupan. Vi ser till att bina har tillgång till rika, giftfria marker – ängar, fruktträd och ljunghedar på åsen.",
+    text: "Allt börjar i blomman. Ett enda bi besöker tusentals blommor per dag och samlar nektar som förvandlas till honung i kupan. Våra bin besöker bland annat rapsfält, fruktodlingar och lindalléer, utifrån vad som finns vid just den bigården.",
     label: "Bina på vaxkakan",
     img: "/images/photos/photo-32.webp",
   },
   {
     n: "02",
     title: "Slungning",
-    text: "När ramarna är fyllda och honungen lagom mogen lyfter vi dem ur kupan och skattar bort vaxlocken. Ramarna placeras i slungan, där honungen försiktigt centrifugeras ut – utan värme som förstör smaken.",
+    text: "När ramarna är fyllda och honungen lagom mogen lyfter vi dem ur kupan och river bort vaxlocken. Ramarna placeras i slungan, där honungen försiktigt centrifugeras ut – utan värme som förstör smaken.",
     label: "Slungning",
-    img: "/images/photos/photo-22.webp",
+    // Fel bild (inte slungan) borttagen tills korrekt foto finns.
   },
   {
     n: "03",
@@ -134,7 +134,7 @@ export default function Honey() {
             align="center"
             eyebrow="Sorter & säsong"
             title="En honung, många ansikten"
-            description="Smaken skiftar med blomningen. Samma bin, samma marker – men tre helt olika honungar beroende på när på året de skördas."
+            description="Smaken skiftar med blomningen. Samma bin, samma marker – men två helt olika honungar beroende på när på året de skördas."
           />
           <div className="honey__sorts">
             {PRODUCTS.map((p, i) => (
@@ -164,10 +164,10 @@ export default function Honey() {
                 <h2>Därför smakar två burkar aldrig exakt likadant</h2>
                 <p>
                   Honung är ett levande naturprodukt. En regnig försommar,
-                  en varm juli eller en tidig ljungblomning – allt sätter sin
-                  prägel på färg, arom och konsistens. Vi ser det inte som en
-                  brist utan som hela poängen. Varje skörd är en ögonblicksbild
-                  av året som var.
+                  en varm juli eller ett fält med åkerböna alldeles vid
+                  kuporna – allt sätter sin prägel på färg, arom och
+                  konsistens. Vi ser det inte som en brist utan som hela
+                  poängen. Varje skörd är en ögonblicksbild av året som var.
                 </p>
               </div>
             </div>

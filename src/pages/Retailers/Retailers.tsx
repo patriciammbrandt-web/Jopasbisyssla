@@ -4,7 +4,7 @@ import Reveal from "../../components/Reveal/Reveal";
 import PageHeader from "../../components/PageHeader/PageHeader";
 import SectionHeading from "../../components/SectionHeading/SectionHeading";
 import { usePageMeta } from "../../hooks/usePageMeta";
-import { RETAILERS, HONEY_KIOSKS, CONTACT } from "../../data/site";
+import { RETAILER_SHOPS, RETAILER_PARTNERS, HONEY_KIOSKS, CONTACT } from "../../data/site";
 import { useMarkets } from "../../hooks/useMarkets";
 import "./Retailers.css";
 
@@ -12,7 +12,7 @@ export default function Retailers() {
   usePageMeta({
     title: "Återförsäljare",
     description:
-      "Här hittar du Jopas Honung – gårdsbutiker, caféer, specialbutiker och självbetjäningskiosker i Skåne.",
+      "Här hittar du Jopas Honung – återförsäljare, samarbeten och självbetjäningskiosker i Skåne.",
     path: "/aterforsaljare",
   });
   const { markets } = useMarkets();
@@ -22,18 +22,65 @@ export default function Retailers() {
       <PageHeader
         eyebrow="Återförsäljare"
         title="Var du hittar vår honung"
-        intro="Honungen säljs hos utvalda handlare runt om i Skåne – och i våra självbetjäningskiosker. Här är platserna där du kan få tag på den."
+        intro="Honungen säljs hos utvalda återförsäljare runt om i Skåne, hos gårdar vi samarbetar med – och i våra självbetjäningskiosker."
       />
 
-      {/* Butiker */}
+      {/* Återförsäljare */}
       <section className="section">
         <div className="container">
           <SectionHeading
-            eyebrow="Butiker & samarbeten"
+            eyebrow="Återförsäljare"
             title="Där honungen står på hyllan"
           />
           <div className="retailers__grid">
-            {RETAILERS.map((r, i) => (
+            {RETAILER_SHOPS.map((r, i) => (
+              <Reveal key={r.id} variant="up" delay={i * 70}>
+                <article className="retailer-card">
+                  {r.logo && (
+                    <div className="retailer-card__logo">
+                      <img
+                        src={r.logo}
+                        alt={`${r.name} logotyp`}
+                        loading="lazy"
+                      />
+                    </div>
+                  )}
+                  <span className="retailer-card__type">{r.type}</span>
+                  <h3 className="retailer-card__name">{r.name}</h3>
+                  <p className="retailer-card__loc">
+                    <span className="retailer-card__pin" aria-hidden="true">
+                      ◈
+                    </span>
+                    {r.location}
+                  </p>
+                  {r.note && <p className="retailer-card__note">{r.note}</p>}
+                  {r.url && (
+                    <a
+                      href={r.url}
+                      className="retailer-card__link"
+                      target="_blank"
+                      rel="noreferrer noopener"
+                    >
+                      Besök webbplats
+                      <span aria-hidden="true"> →</span>
+                    </a>
+                  )}
+                </article>
+              </Reveal>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Samarbeten */}
+      <section className="section retailers__partners-section">
+        <div className="container">
+          <SectionHeading
+            eyebrow="Samarbeten"
+            title="Gårdar vi samarbetar med"
+          />
+          <div className="retailers__grid">
+            {RETAILER_PARTNERS.map((r, i) => (
               <Reveal key={r.id} variant="up" delay={i * 70}>
                 <article className="retailer-card">
                   {r.logo && (

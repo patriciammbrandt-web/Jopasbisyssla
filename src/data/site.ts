@@ -51,24 +51,14 @@ export const PRODUCTS: Product[] = [
     image: "/images/photos/photo-21.webp",
   },
   {
-    id: "sommar",
-    name: "Sommarhonung",
-    season: "Juli – Augusti",
-    tagline: "Fyllig och gyllene",
+    id: "sensommar",
+    name: "Sensommarhonung",
+    season: "Augusti",
+    tagline: "Fyllig och krämig",
     description:
-      "Slungad när sommarängarna står i full blom. Klöver, lind och vilda örter ger en djupare, gyllene honung med tydlig karaktär.",
-    notes: ["Gyllene", "Fyllig", "Blomsteräng"],
+      "Slungad i augusti. Honungen varierar i färg och smak från år till år beroende på vilka blommor bina haft tillgång till. Klöver, lind och vilda örter ger en djupare, gyllene honung med tydlig karaktär, medan honungsfacelia och åkerböna ger en ljusare och mildare honung.",
+    notes: ["Fyllig", "Krämig", "Varierar"],
     image: "/images/photos/photo-09.webp",
-  },
-  {
-    id: "ljunghonung",
-    name: "Ljunghonung",
-    season: "Sept – Okt",
-    tagline: "Mörk, kryddig och rar",
-    description:
-      "Vår mest karaktärsfulla honung, samlad från ljungen på åsens hedar. Mörk, nästan geléaktig med en kryddig, lätt beska. Fås i begränsad mängd.",
-    notes: ["Mörk", "Kryddig", "Begränsad"],
-    image: "/images/photos/photo-08.webp",
   },
 ];
 
@@ -118,24 +108,28 @@ export interface Retailer {
   note?: string;
   url?: string;
   logo?: string;
+  /** Återförsäljare eller samarbete (egna etiketter / bigård). */
+  kind: "retailer" | "partner";
 }
 
 export const RETAILERS: Retailer[] = [
   {
     id: "skanehill",
     name: "Skånehill gårdsbutik",
-    type: "Gårdsbutik",
+    type: "Samarbete",
     location: "Kvidinge",
     url: "https://skanehill.se/",
     logo: "/images/retailers/skanehill.png",
+    kind: "partner",
   },
   {
     id: "sannagarden",
     name: "Sånnagården",
-    type: "Gårdsbutik",
+    type: "Samarbete",
     location: "Kvidinge",
     url: "https://www.sannagarden.se/",
     logo: "/images/retailers/sannagarden.svg",
+    kind: "partner",
   },
   {
     id: "sigvard",
@@ -144,6 +138,7 @@ export const RETAILERS: Retailer[] = [
     location: "Åstorp",
     url: "https://sigvardmansgard.se/",
     logo: "/images/retailers/sigvard.png",
+    kind: "retailer",
   },
   {
     id: "bruket",
@@ -152,14 +147,16 @@ export const RETAILERS: Retailer[] = [
     location: "Helsingborg",
     url: "https://bruketkaffebar.se/",
     logo: "/images/retailers/bruket.png",
+    kind: "retailer",
   },
   {
     id: "gyegarden",
     name: "Gyegårdens äppelodling",
-    type: "Äppelodling",
+    type: "Samarbete",
     location: "Söderåsen",
     url: "https://gyegarden.se/",
     logo: "/images/retailers/gyegarden.png",
+    kind: "partner",
   },
   {
     id: "kullabygden",
@@ -168,6 +165,7 @@ export const RETAILERS: Retailer[] = [
     location: "Åstorp",
     url: "https://www.kullabygden.se/",
     logo: "/images/retailers/kullabygden.svg",
+    kind: "retailer",
   },
   {
     id: "soderports",
@@ -176,6 +174,7 @@ export const RETAILERS: Retailer[] = [
     location: "Helsingborg",
     url: "https://www.soderportskaffeochte.se/",
     logo: "/images/retailers/soderports.svg",
+    kind: "retailer",
   },
   {
     id: "blomsterstudion",
@@ -184,8 +183,12 @@ export const RETAILERS: Retailer[] = [
     location: "Åstorp",
     url: "https://www.blomsterstudion.se/",
     logo: "/images/retailers/blomsterstudion.svg",
+    kind: "retailer",
   },
 ];
+
+export const RETAILER_SHOPS = RETAILERS.filter((r) => r.kind === "retailer");
+export const RETAILER_PARTNERS = RETAILERS.filter((r) => r.kind === "partner");
 
 export interface HoneyKiosk {
   id: string;
@@ -199,19 +202,19 @@ export interface HoneyKiosk {
 export const HONEY_KIOSKS: HoneyKiosk[] = [
   {
     id: "lindvagen",
-    name: "Lindvägen",
+    name: "Lindvägen 15",
     location: "Åstorp",
     note: "Självbetjäning",
     mapsUrl:
-      "https://www.google.com/maps/search/?api=1&query=Lindv%C3%A4gen+Åstorp",
+      "https://www.google.com/maps/search/?api=1&query=Lindv%C3%A4gen+15+Åstorp",
   },
   {
     id: "asa",
-    name: "Åsa Jutegårdsväg",
+    name: "Åsa Jutegårdsväg 3",
     location: "Åsa",
     note: "Självbetjäning",
     mapsUrl:
-      "https://www.google.com/maps/search/?api=1&query=%C3%85sa+Juteg%C3%A5rdsv%C3%A4g+%C3%85sa",
+      "https://www.google.com/maps/search/?api=1&query=%C3%85sa+Juteg%C3%A5rdsv%C3%A4g+3",
   },
   {
     id: "padel",

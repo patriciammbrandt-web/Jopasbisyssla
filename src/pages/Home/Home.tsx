@@ -11,8 +11,7 @@ import "./Home.css";
 
 const MARQUEE_BASE = [
   "Försommarhonung",
-  "Sommarhonung",
-  "Ljunghonung",
+  "Sensommarhonung",
   "Pollinering",
   "Bisamhällen",
   "Bivax",
@@ -167,7 +166,7 @@ export default function Home() {
                   <span className="stats__label">Där bina flyger</span>
                 </div>
                 <div className="stats__item">
-                  <span className="stats__num">3 skördar</span>
+                  <span className="stats__num">2 skördar</span>
                   <span className="stats__label">Följer säsongen</span>
                 </div>
                 <div className="stats__item">
@@ -216,6 +215,7 @@ export default function Home() {
         <div className="container">
           <div className="products-preview__head">
             <SectionHeading
+              align="center"
               eyebrow="Sortimentet"
               title="Honung för varje säsong"
               description="Smaken förändras med blomningen. Här är honungen vi slungar under året."

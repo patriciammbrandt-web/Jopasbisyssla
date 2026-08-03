@@ -1,4 +1,8 @@
-/* Butikskort */
+.retailers__partners-section {
+  background: var(--bg-elevated);
+  border-block: 1px solid var(--border-subtle);
+}
+
 .retailers__grid {
   display: grid;
   grid-template-columns: 1fr;
