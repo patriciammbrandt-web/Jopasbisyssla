@@ -14,7 +14,7 @@ export default function Footer() {
         <div className="footer__brand">
           <Logo size="lg" tone="light" />
           <p className="footer__tagline">
-            Småskalig biodling på Söderåsens sluttningar mot Hallandsåsen.
+            Småskalig biodling på Söderåsens sluttningar och slätten nedanför.
             Honung hanterad på ett hantverksmässigt sätt – från blomma till burk.
           </p>
           <Socials className="footer__socials" />

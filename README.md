@@ -1,7 +1,7 @@
 # Jopas Honung
 
 Webbplats för **Jopas Honung** – en småskalig svensk biodling på Söderåsens
-sluttningar mot Hallandsåsen. Modern, luftig och naturlig design med fokus på
+sluttningar och slätten nedanför. Modern, luftig och naturlig design med fokus på
 hantverk, förtroende och stora bilder.
 
 ## Teknik

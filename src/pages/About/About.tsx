@@ -9,7 +9,7 @@ import "./About.css";
 const VALUES = [
   {
     title: "Småskaligt med flit",
-    text: "Vi växer i binas takt, inte marknadens. Få kupor betyder att vi hinner se varje samhälle och sköta det med omsorg.",
+    text: "Vi växer i binas takt, inte marknadens. Ett hanterbart antal kupor betyder att vi hinner se varje samhälle och sköta det med omsorg.",
   },
   {
     title: "Lokalt förankrat",
@@ -17,11 +17,11 @@ const VALUES = [
   },
   {
     title: "Hantverk före hastighet",
-    text: "Vi slungar, silar och tappar för hand. Långsamt och varsamt, så att honungens smak och nyttiga ämnen bevaras.",
+    text: "Vi slungar, silar och tappar all honung själva i vårt slungrum. Varsamt, utan upphettning, så att honungens smak och nyttiga ämnen bevaras.",
   },
   {
     title: "Respekt för bina",
-    text: "Friska bin ger god honung. Vi tar bara det de kan avvara och låter samhällena gå starka in i vintern.",
+    text: "Friska bin ger god honung. Vi tar aldrig honung från yngelrummet och efter sista skattningen i augusti ger vi bina sockerlösning som foder för att låta samhällena gå starka in i vintern.",
   },
 ];
 
@@ -62,24 +62,16 @@ export default function About() {
               <p>
                 En sommar flyttade det in ett bisamhälle i en gammal
                 fruktlåda. I stället för att flytta på dem blev det en kupa,
-                och sedan två. Ju mer vi lärde oss om binas märkvärdiga liv,
-                desto svårare blev det att sluta.
+                och sedan två.
               </p>
             </Reveal>
             <Reveal variant="up" delay={180}>
               <p>
                 Det som var tänkt som en liten bisyssla vid sidan av vardagen
-                blev en passion. I dag flyger våra bin på Söderåsens
-                sluttningar bort mot Hallandsåsen – ett landskap av ängar,
-                fruktträd och ljunghedar som ger honungen sin karaktär.
-              </p>
-            </Reveal>
-            <Reveal variant="up" delay={240}>
-              <p>
-                Vi är fortfarande små, och det är ett medvetet val. Genom att
-                hålla ett hanterbart antal kupor kan vi vara nära varje
-                samhälle och sköta honungen på ett hantverksmässigt sätt,
-                hela vägen från blomma till burk.
+                blev en passion. Idag sköter vi sju bigårdar och våra bin
+                flyger på Söderåsens sluttningar och slätten nedanför – ett
+                landskap av träd, åkrar och ängar som ger honungen sin
+                karaktär.
               </p>
             </Reveal>
           </div>

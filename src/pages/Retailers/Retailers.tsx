@@ -197,29 +197,6 @@ export default function Retailers() {
         </div>
       </section>
 
-      {/* Karta */}
-      <section className="section">
-        <div className="container">
-          <SectionHeading
-            eyebrow="Hitta hit"
-            title="Vårt hörn av Skåne"
-            description="Vi håller till på Söderåsens sluttningar mot Hallandsåsen. Hör av dig för exakt adress vid gårdsbesök."
-          />
-          <Reveal variant="scale">
-            <div className="retailers__map" role="img" aria-label="Karta över Söderåsen i Skåne">
-              <div className="retailers__map-grid" aria-hidden="true" />
-              <div className="retailers__map-pin">
-                <span className="retailers__map-dot" />
-                <span className="retailers__map-label">Söderåsen</span>
-              </div>
-              <p className="retailers__map-hint">
-                Karta läggs in här (Google Maps) när gårdsadressen är klar.
-              </p>
-            </div>
-          </Reveal>
-        </div>
-      </section>
-
       {/* Bli återförsäljare */}
       <section className="section">
         <div className="container">

@@ -24,7 +24,7 @@ const PILLARS = [
   {
     to: "/honungen",
     title: "Honungen",
-    text: "Oförädlad och långsamt hanterad – slungad, silad och tappad för hand så att smak och nyttiga ämnen bevaras.",
+    text: "Oförädlad och långsamt hanterad – slungad, silad och tappad i vårt slungrum, utan upphettning, så att smak och nyttiga ämnen bevaras.",
   },
   {
     to: "/honungen",
@@ -58,7 +58,7 @@ export default function Home() {
             alt=""
             width={1000}
             height={750}
-            decoding="async"
+            decoding="sync"
             fetchPriority="high"
             loading="eager"
           />
@@ -71,8 +71,8 @@ export default function Home() {
               Honung med <em>sinne</em> för det småskaliga
             </h1>
             <p className="hero__lead lead">
-              Våra flitiga bin flyger på Söderåsens sluttningar bort mot
-              Hallandsåsen. Vi är småskaliga producenter som hanterar vår
+              Våra flitiga bin flyger på Söderåsens sluttningar och slätten
+              nedanför. Vi är småskaliga producenter som hanterar vår
               honung på ett hantverksmässigt sätt – från blomma till burk.
             </p>
             <div className="hero__actions">
@@ -88,16 +88,13 @@ export default function Home() {
                 <strong>100%</strong> svensk honung
               </li>
               <li>
-                <strong>Slungad</strong> för hand
-              </li>
-              <li>
                 <strong>Lokalt</strong> på åsen
               </li>
             </ul>
           </div>
 
           <div className="hero__media">
-            <Reveal variant="up" delay={240} className="hero__markets">
+            <div className="hero__markets">
               <div className="hero__markets-head">
                 <span className="eyebrow">Kommande marknader</span>
                 <Link to="/aterforsaljare" className="hero__markets-all">
@@ -119,7 +116,7 @@ export default function Home() {
                   </li>
                 ))}
               </ul>
-            </Reveal>
+            </div>
           </div>
         </div>
 
