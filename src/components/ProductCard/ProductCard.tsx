@@ -16,7 +16,8 @@ export default function ProductCard({ product }: ProductCardProps) {
           alt={`Burk med ${product.name}`}
           label={product.name}
           ratio="4/5"
-          rounded="lg"
+          rounded="md"
+          className="media--product"
         />
         <span className="pcard__season">{product.season}</span>
       </div>

@@ -28,7 +28,7 @@ const STEPS: Step[] = [
     title: "Slungning",
     text: "När ramarna är fyllda och honungen lagom mogen lyfter vi dem ur kupan och river bort vaxlocken. Ramarna placeras i slungan, där honungen försiktigt centrifugeras ut – utan värme som förstör smaken.",
     label: "Slungning",
-    // Fel bild (inte slungan) borttagen tills korrekt foto finns.
+    img: "/images/photos/slungning.webp",
   },
   {
     n: "03",

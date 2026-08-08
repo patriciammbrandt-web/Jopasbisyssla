@@ -10,6 +10,8 @@ interface MediaProps {
   label?: string;
   /** Bildförhållande, t.ex. "4/3", "16/9", "1/1", "3/4". */
   ratio?: string;
+  /** cover beskär, contain visar hela bilden i ramen. Default: cover. */
+  fit?: "cover" | "contain";
   /** Ladda ivrigt (used for LCP hero image). Default: lazy. */
   priority?: boolean;
   className?: string;
@@ -26,6 +28,7 @@ export default function Media({
   alt,
   label,
   ratio = "4/3",
+  fit = "cover",
   priority = false,
   className = "",
   rounded = "lg",
@@ -36,7 +39,7 @@ export default function Media({
 
   return (
     <figure
-      className={`media media--r-${rounded} ${className}`.trim()}
+      className={`media media--r-${rounded} media--fit-${fit} ${className}`.trim()}
       style={{ aspectRatio: ratio }}
     >
       <div className="media__placeholder" aria-hidden={showImg && loaded}>

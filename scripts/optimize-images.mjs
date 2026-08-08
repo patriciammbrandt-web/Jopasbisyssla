@@ -18,6 +18,11 @@ const photos = [
   "photo-30",
   "photo-31",
   "photo-32",
+  "forsommarhonung",
+  "sensommarhonung",
+  "forsommarhonung-2",
+  "sensommarhonung-2",
+  "slungning",
 ];
 
 async function exists(p) {

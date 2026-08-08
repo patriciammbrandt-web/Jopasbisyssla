@@ -154,7 +154,7 @@ export default function Home() {
             <SectionHeading
               eyebrow="Om oss"
               title="En bisyssla som blev en passion"
-              description="Det började med ett par kupor på tomten och en nyfikenhet på binas värld. I dag sköter vi ett växande antal samhällen på åsen – men filosofin är densamma: få kupor, mycket omsorg, och honung vi själva är stolta över att ställa på bordet."
+              description="En sommar flyttade det in ett bisamhälle i en gammal fruktlåda. I stället för att flytta på dem blev det en kupa, och sedan två. Idag sköter vi sju bigårdar och våra bin flyger på Söderåsens sluttningar och slätten nedanför."
             />
             <Reveal variant="up" delay={160}>
               <div className="stats">

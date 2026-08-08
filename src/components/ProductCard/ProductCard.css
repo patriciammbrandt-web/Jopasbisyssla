@@ -18,6 +18,12 @@
 
 .pcard__media {
   position: relative;
+  width: 82%;
+  margin: 1rem auto 0;
+}
+
+.pcard__media .media--product {
+  border-radius: var(--radius-md);
 }
 
 .pcard__season {

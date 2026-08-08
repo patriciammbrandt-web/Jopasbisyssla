@@ -38,8 +38,9 @@ export default function Products() {
                       src={p.image}
                       alt={`Burk med ${p.name}`}
                       label={p.name}
-                      ratio="4/3"
-                      rounded="lg"
+                      ratio="4/5"
+                      rounded="md"
+                      className="media--product"
                     />
                   </div>
                   <div className="prod-row__body">

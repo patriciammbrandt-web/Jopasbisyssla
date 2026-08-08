@@ -81,12 +81,35 @@
   transition: opacity var(--dur-slow) var(--ease-out),
     transform 900ms var(--ease-out);
 }
+.media--fit-contain .media__img {
+  object-fit: contain;
+  object-position: center;
+  transform: scale(1);
+  padding: 0.65rem;
+}
 .media__img.is-loaded {
   opacity: 1;
   transform: scale(1);
 }
 
+/* Produktburkar: tunn border, mjuka hörn — ingen gul/vit mat */
+.media--product {
+  box-shadow: none;
+  border: 1.5px solid rgba(22, 50, 63, 0.16);
+  background: #fff;
+}
+.media--product .media__placeholder {
+  background-image: none;
+  background-color: #fff;
+}
+.media--product .media__img {
+  transform: scale(1);
+}
+
 /* subtil zoom vid hover om bilden ligger i ett interaktivt kort */
 .media--hover:hover .media__img.is-loaded {
-  transform: scale(1.05);
+  transform: scale(1.02);
+}
+.media--hover:hover .media--product .media__img.is-loaded {
+  transform: scale(1.015);
 }

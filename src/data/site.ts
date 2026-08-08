@@ -48,7 +48,7 @@ export const PRODUCTS: Product[] = [
     description:
       "Årets första skörd med inslag av raps och tidiga vårblommor. Krämig konsistens och en rund, mild sötma som passar lika bra på mackan som i teet.",
     notes: ["Ljus färg", "Krämig", "Mild raps"],
-    image: "/images/photos/photo-21.webp",
+    image: "/images/photos/forsommarhonung-eq.webp",
   },
   {
     id: "sensommar",
@@ -58,7 +58,7 @@ export const PRODUCTS: Product[] = [
     description:
       "Slungad i augusti. Honungen varierar i färg och smak från år till år beroende på vilka blommor bina haft tillgång till. Klöver, lind och vilda örter ger en djupare, gyllene honung med tydlig karaktär, medan honungsfacelia och åkerböna ger en ljusare och mildare honung.",
     notes: ["Fyllig", "Krämig", "Varierar"],
-    image: "/images/photos/photo-09.webp",
+    image: "/images/photos/sensommarhonung-eq.webp",
   },
 ];
 
