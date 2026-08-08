@@ -30,7 +30,9 @@ export default function Navbar() {
   }, [open]);
 
   return (
-    <header className={`nav ${scrolled ? "nav--scrolled" : ""}`}>
+    <header
+      className={`nav ${scrolled ? "nav--scrolled" : ""} ${open ? "nav--open" : ""}`}
+    >
       <div className="nav__inner container">
         <Link to="/" className="nav__brand" aria-label="Jopas Honung – startsida">
           <Logo />

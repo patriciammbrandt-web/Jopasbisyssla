@@ -28,6 +28,17 @@
   height: 84px;
   width: 84px;
 }
+
+@media (max-width: 959px) {
+  .logo--md .logo__img {
+    height: 52px;
+    width: 52px;
+  }
+  .logo--sm .logo__img {
+    height: 44px;
+    width: 44px;
+  }
+}
 .logo--lg .logo__img {
   height: 120px;
   width: 120px;

@@ -69,6 +69,7 @@
   align-self: flex-start;
   margin-top: var(--space-2);
   padding: 1rem 2rem;
+  min-height: 48px;
   font-weight: 600;
   font-size: var(--fs-base);
   color: var(--color-bark);
@@ -77,6 +78,18 @@
   box-shadow: var(--shadow-honey);
   transition: transform var(--dur) var(--ease-out),
     box-shadow var(--dur) var(--ease-out);
+}
+
+@media (max-width: 640px) {
+  .contact__form-wrap,
+  .contact__card {
+    border-radius: var(--radius-lg);
+    padding: 1.35rem;
+  }
+  .contact__submit {
+    width: 100%;
+    align-self: stretch;
+  }
 }
 .contact__submit span {
   transition: transform var(--dur) var(--ease-out);

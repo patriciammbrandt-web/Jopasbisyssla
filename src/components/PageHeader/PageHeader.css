@@ -1,8 +1,18 @@
 .page-header {
   position: relative;
-  padding-top: calc(var(--nav-h) + var(--space-7));
-  padding-bottom: var(--space-6);
+  padding-top: calc(var(--nav-h) + var(--space-6));
+  padding-bottom: var(--space-5);
   overflow: hidden;
+}
+
+@media (max-width: 640px) {
+  .page-header {
+    padding-top: calc(var(--nav-h) + var(--space-5));
+    padding-bottom: var(--space-4);
+  }
+  .page-header__intro {
+    font-size: var(--fs-base);
+  }
 }
 .page-header__bg {
   position: absolute;

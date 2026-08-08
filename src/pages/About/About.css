@@ -46,6 +46,23 @@
   transition: transform var(--dur) var(--ease-out),
     box-shadow var(--dur) var(--ease-out);
 }
+
+@media (max-width: 480px) {
+  .value-card,
+  .about__cta {
+    padding: var(--space-4);
+  }
+  .about__quote {
+    padding: var(--space-5) var(--space-3);
+  }
+  .about__quote-mark {
+    font-size: 4.5rem;
+    height: 2.25rem;
+  }
+  .about__quote p {
+    font-size: var(--fs-lg);
+  }
+}
 .value-card:hover {
   transform: translateY(-4px);
   box-shadow: var(--shadow-md);

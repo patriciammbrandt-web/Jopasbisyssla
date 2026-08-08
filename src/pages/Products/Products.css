@@ -54,6 +54,18 @@
   margin-inline: auto;
 }
 
+@media (max-width: 640px) {
+  .products__list {
+    gap: var(--space-5);
+  }
+  .prod-row__name {
+    font-size: var(--fs-xl);
+  }
+  .prod-row__media {
+    width: min(100%, 320px);
+  }
+}
+
 @media (min-width: 820px) {
   .prod-row {
     grid-template-columns: 1fr 1fr;

@@ -108,3 +108,22 @@
 
   --nav-h: 104px;
 }
+
+/* Mobil: kompaktare nav + typografi som andas */
+@media (max-width: 959px) {
+  :root {
+    --nav-h: 72px;
+    --section-y: clamp(3rem, 10vw, 5rem);
+    --fs-hero: clamp(2.35rem, 10.5vw, 3.25rem);
+    --fs-4xl: clamp(2.1rem, 8.5vw, 2.85rem);
+    --fs-3xl: clamp(1.65rem, 6.5vw, 2.25rem);
+    --fs-2xl: clamp(1.4rem, 5.5vw, 1.85rem);
+  }
+}
+
+@media (max-width: 480px) {
+  :root {
+    --nav-h: 68px;
+    --container: 100%;
+  }
+}

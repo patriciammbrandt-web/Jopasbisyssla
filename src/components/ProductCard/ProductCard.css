@@ -18,8 +18,21 @@
 
 .pcard__media {
   position: relative;
-  width: 82%;
-  margin: 1rem auto 0;
+  width: 88%;
+  margin: 0.85rem auto 0;
+}
+
+@media (max-width: 480px) {
+  .pcard__media {
+    width: 92%;
+    margin-top: 0.75rem;
+  }
+  .pcard__body {
+    padding: var(--space-3);
+  }
+  .pcard__notes {
+    gap: 0.3rem;
+  }
 }
 
 .pcard__media .media--product {

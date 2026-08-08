@@ -25,6 +25,16 @@
   transform: none;
 }
 
+@media (max-width: 640px) {
+  .reveal--up {
+    transform: translateY(18px);
+  }
+  .reveal--left,
+  .reveal--right {
+    transform: translateY(14px);
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
   .reveal {
     opacity: 1 !important;

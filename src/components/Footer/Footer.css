@@ -85,6 +85,21 @@
   gap: var(--space-3);
   margin-top: var(--space-1);
 }
+
+@media (max-width: 480px) {
+  .footer__inner {
+    gap: var(--space-5);
+    padding-top: var(--space-6);
+  }
+  .footer__partner-link {
+    width: calc(50% - var(--space-3) / 2);
+    max-width: 9rem;
+  }
+  .footer__bottom {
+    gap: var(--space-3);
+    text-align: left;
+  }
+}
 .footer__partner-link {
   display: inline-flex;
   align-items: center;
