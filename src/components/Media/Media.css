@@ -106,6 +106,20 @@
   transform: scale(1);
 }
 
+/* Kvalitetsintyg: ingen crème/honungs-ram runt dokumentet */
+.media--certificate {
+  box-shadow: var(--shadow-sm);
+  background: #fff;
+}
+.media--certificate .media__placeholder {
+  background-image: none;
+  background-color: #fff;
+}
+.media--certificate.media--fit-contain .media__img {
+  padding: 0;
+  object-fit: contain;
+}
+
 /* subtil zoom vid hover om bilden ligger i ett interaktivt kort */
 .media--hover:hover .media__img.is-loaded {
   transform: scale(1.02);

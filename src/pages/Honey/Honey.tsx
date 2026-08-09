@@ -48,8 +48,8 @@ const STEPS: Step[] = [
     n: "05",
     title: "Kvalitetskontroll",
     text: "Innan honungen får lämna oss kontrollerar vi vattenhalt, konsistens och smak. Bara honung vi själva skulle ställa på frukostbordet får bära vår etikett.",
-    label: "Kvalitetskontroll",
-    img: "/images/photos/photo-06.webp",
+    label: "Kvalitetsintyg 2025",
+    img: "/images/photos/kvalitetsintyg-2025.webp",
   },
 ];
 
@@ -110,10 +110,16 @@ export default function Honey() {
                 >
                   <Media
                     src={step.img}
-                    alt={step.title}
+                    alt={
+                      step.n === "05"
+                        ? "Kvalitetsintyg 2025 från Sveriges Biodlares Riksförbund tilldelat Patricia Brandt"
+                        : step.title
+                    }
                     label={step.label}
-                    ratio="4/3"
+                    ratio={step.n === "05" ? "3/4" : "4/3"}
+                    fit={step.n === "05" ? "contain" : "cover"}
                     rounded="lg"
+                    className={step.n === "05" ? "media--certificate" : ""}
                   />
                 </Reveal>
                 <Reveal variant="up" delay={100} className="honey-step__copy">

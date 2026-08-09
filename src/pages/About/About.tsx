@@ -60,9 +60,8 @@ export default function About() {
             />
             <Reveal variant="up" delay={120}>
               <p>
-                En sommar flyttade det in ett bisamhälle i en gammal
-                fruktlåda. I stället för att flytta på dem blev det en kupa,
-                och sedan två.
+                En sommar fick vi ett bisamhälle av en granne som snart blev
+                både två och tre kupor i trädgården.
               </p>
             </Reveal>
             <Reveal variant="up" delay={180}>

@@ -154,7 +154,7 @@ export default function Home() {
             <SectionHeading
               eyebrow="Om oss"
               title="En bisyssla som blev en passion"
-              description="En sommar flyttade det in ett bisamhälle i en gammal fruktlåda. I stället för att flytta på dem blev det en kupa, och sedan två. Idag sköter vi sju bigårdar och våra bin flyger på Söderåsens sluttningar och slätten nedanför."
+              description="En sommar fick vi ett bisamhälle av en granne som snart blev både två och tre kupor i trädgården. Idag sköter vi sju bigårdar och våra bin flyger på Söderåsens sluttningar och slätten nedanför."
             />
             <Reveal variant="up" delay={160}>
               <div className="stats">
