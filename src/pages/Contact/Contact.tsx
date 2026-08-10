@@ -58,18 +58,23 @@ export default function Contact() {
     setSubmitError(null);
     if (Object.keys(next).length > 0) return;
 
-    const accessKey = import.meta.env.VITE_WEB3FORMS_ACCESS_KEY as
-      | string
-      | undefined;
-    if (!accessKey) {
-      setSubmitError("Formuläret saknar e-postnyckel. Kontakta webbansvarig.");
-      return;
-    }
-
     setSubmitting(true);
     try {
-      // Web3Forms måste anropas från webbläsaren – deras API blockerar
-      // server-IP:n (Cloudflare). Access key är avsedd att ligga i frontend.
+      const configRes = await fetch("/api/contact-config");
+      const config = (await configRes.json().catch(() => ({}))) as {
+        accessKey?: string;
+        error?: string;
+      };
+      if (!configRes.ok || !config.accessKey) {
+        setSubmitError(
+          config.error ||
+            "Formuläret saknar e-postnyckel. Kontakta webbansvarig.",
+        );
+        return;
+      }
+
+      // Web3Forms måste anropas från webbläsaren – Cloudflare blockerar
+      // anrop från Vercel-servern.
       const res = await fetch("https://api.web3forms.com/submit", {
         method: "POST",
         headers: {
@@ -77,7 +82,7 @@ export default function Contact() {
           Accept: "application/json",
         },
         body: JSON.stringify({
-          access_key: accessKey,
+          access_key: config.accessKey,
           name: form.name.trim(),
           email: form.email.trim(),
           subject: form.subject.trim() || "Meddelande från Jopas Honung",
