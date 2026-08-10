@@ -36,3 +36,5 @@ shell_probe.txt
 # Interna instruktioner – ska inte till repot
 claude.md
 CLAUDE.md
+.vercel
+.env*

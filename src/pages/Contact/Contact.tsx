@@ -28,10 +28,13 @@ export default function Contact() {
   const [form, setForm] = useState<FormState>(EMPTY);
   const [errors, setErrors] = useState<Errors>({});
   const [sent, setSent] = useState(false);
+  const [submitting, setSubmitting] = useState(false);
+  const [submitError, setSubmitError] = useState<string | null>(null);
 
   const update = (field: keyof FormState, value: string) => {
     setForm((f) => ({ ...f, [field]: value }));
     setErrors((e) => ({ ...e, [field]: undefined }));
+    setSubmitError(null);
   };
 
   const validate = (): Errors => {
@@ -48,14 +51,36 @@ export default function Contact() {
     return next;
   };
 
-  const handleSubmit = (e: FormEvent) => {
+  const handleSubmit = async (e: FormEvent) => {
     e.preventDefault();
     const next = validate();
     setErrors(next);
-    if (Object.keys(next).length === 0) {
-      // Ingen backend ännu – här kopplas t.ex. formspree/e-post-API in.
+    setSubmitError(null);
+    if (Object.keys(next).length > 0) return;
+
+    setSubmitting(true);
+    try {
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          name: form.name.trim(),
+          email: form.email.trim(),
+          subject: form.subject.trim(),
+          message: form.message.trim(),
+        }),
+      });
+      const data = (await res.json().catch(() => ({}))) as { error?: string };
+      if (!res.ok) {
+        setSubmitError(data.error || "Något gick fel. Försök igen.");
+        return;
+      }
       setSent(true);
       setForm(EMPTY);
+    } catch {
+      setSubmitError("Kunde inte skicka just nu. Försök igen om en stund.");
+    } finally {
+      setSubmitting(false);
     }
   };
 
@@ -96,11 +121,14 @@ export default function Contact() {
                   <input
                     id="name"
                     type="text"
+                    name="name"
+                    autoComplete="name"
                     value={form.name}
                     onChange={(e) => update("name", e.target.value)}
                     aria-invalid={Boolean(errors.name)}
                     aria-describedby={errors.name ? "err-name" : undefined}
                     placeholder="Ditt namn"
+                    disabled={submitting}
                   />
                   {errors.name && (
                     <span id="err-name" className="field__error">
@@ -114,11 +142,14 @@ export default function Contact() {
                   <input
                     id="email"
                     type="email"
+                    name="email"
+                    autoComplete="email"
                     value={form.email}
                     onChange={(e) => update("email", e.target.value)}
                     aria-invalid={Boolean(errors.email)}
                     aria-describedby={errors.email ? "err-email" : undefined}
                     placeholder="namn@exempel.se"
+                    disabled={submitting}
                   />
                   {errors.email && (
                     <span id="err-email" className="field__error">
@@ -132,9 +163,11 @@ export default function Contact() {
                   <input
                     id="subject"
                     type="text"
+                    name="subject"
                     value={form.subject}
                     onChange={(e) => update("subject", e.target.value)}
                     placeholder="Vad gäller det?"
+                    disabled={submitting}
                   />
                 </div>
 
@@ -142,12 +175,14 @@ export default function Contact() {
                   <label htmlFor="message">Meddelande</label>
                   <textarea
                     id="message"
+                    name="message"
                     rows={5}
                     value={form.message}
                     onChange={(e) => update("message", e.target.value)}
                     aria-invalid={Boolean(errors.message)}
                     aria-describedby={errors.message ? "err-message" : undefined}
                     placeholder="Berätta vad vi kan hjälpa till med…"
+                    disabled={submitting}
                   />
                   {errors.message && (
                     <span id="err-message" className="field__error">
@@ -156,9 +191,19 @@ export default function Contact() {
                   )}
                 </div>
 
-                <button type="submit" className="contact__submit">
-                  Skicka meddelande
-                  <span aria-hidden="true">→</span>
+                {submitError && (
+                  <p className="field__error" role="alert">
+                    {submitError}
+                  </p>
+                )}
+
+                <button
+                  type="submit"
+                  className="contact__submit"
+                  disabled={submitting}
+                >
+                  {submitting ? "Skickar…" : "Skicka meddelande"}
+                  {!submitting && <span aria-hidden="true">→</span>}
                 </button>
               </form>
             )}
