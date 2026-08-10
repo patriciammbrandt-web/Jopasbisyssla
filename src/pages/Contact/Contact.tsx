@@ -58,21 +58,39 @@ export default function Contact() {
     setSubmitError(null);
     if (Object.keys(next).length > 0) return;
 
+    const accessKey = import.meta.env.VITE_WEB3FORMS_ACCESS_KEY as
+      | string
+      | undefined;
+    if (!accessKey) {
+      setSubmitError("Formuläret saknar e-postnyckel. Kontakta webbansvarig.");
+      return;
+    }
+
     setSubmitting(true);
     try {
-      const res = await fetch("/api/contact", {
+      // Web3Forms måste anropas från webbläsaren – deras API blockerar
+      // server-IP:n (Cloudflare). Access key är avsedd att ligga i frontend.
+      const res = await fetch("https://api.web3forms.com/submit", {
         method: "POST",
-        headers: { "Content-Type": "application/json" },
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json",
+        },
         body: JSON.stringify({
+          access_key: accessKey,
           name: form.name.trim(),
           email: form.email.trim(),
-          subject: form.subject.trim(),
+          subject: form.subject.trim() || "Meddelande från Jopas Honung",
           message: form.message.trim(),
+          from_name: "Jopas Honung",
         }),
       });
-      const data = (await res.json().catch(() => ({}))) as { error?: string };
-      if (!res.ok) {
-        setSubmitError(data.error || "Något gick fel. Försök igen.");
+      const data = (await res.json().catch(() => ({}))) as {
+        success?: boolean;
+        message?: string;
+      };
+      if (!res.ok || !data.success) {
+        setSubmitError(data.message || "Något gick fel. Försök igen.");
         return;
       }
       setSent(true);
