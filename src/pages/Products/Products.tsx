@@ -24,7 +24,7 @@ export default function Products() {
       <PageHeader
         eyebrow="Produkter & Tjänster"
         title="Honung, bin och allt däremellan"
-        intro="Vår honung säljs i burk direkt från gården, på marknader och hos utvalda återförsäljare. Utöver honungen erbjuder vi pollinering och friska bisamhällen – och snart även eget bivax."
+        intro="Vår honung säljs i burk direkt från gården, på marknader och hos utvalda återförsäljare. Utöver honungen erbjuder vi pollinering, friska bisamhällen och eget bivax."
       />
 
       {/* Honung */}

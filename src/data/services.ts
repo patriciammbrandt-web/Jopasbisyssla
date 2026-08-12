@@ -53,7 +53,7 @@ export const FALLBACK_SERVICES: ServiceOffer[] = [
     id: "vax",
     title: "Bivax",
     description:
-      "Rent bivax från vår egen produktion – till ljus, salvor och vaxdukar. Lanseras inom kort i mindre partier.",
+      "Rent bivax från vår egen produktion – till ljus, salvor och vaxdukar.",
     status: "unavailable",
   },
 ];
