@@ -127,9 +127,7 @@ export default function Home() {
                 {MARQUEE_ITEMS.map((item, i) => (
                   <span className="hero__marquee-item" key={`${group}-${i}`}>
                     {item}
-                    <span className="hero__marquee-sep" aria-hidden="true">
-                      ✳
-                    </span>
+                    <span className="hero__marquee-sep" aria-hidden="true" />
                   </span>
                 ))}
               </div>

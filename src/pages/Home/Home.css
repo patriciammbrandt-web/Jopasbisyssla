@@ -305,10 +305,25 @@
   white-space: nowrap;
 }
 .hero__marquee-sep {
+  display: inline-block;
+  width: 0.42em;
+  height: 0.42em;
   margin-inline: var(--space-4);
-  font-style: normal;
-  font-size: 0.7em;
-  color: var(--color-honey-strong);
+  flex-shrink: 0;
+  background: var(--color-honey-strong);
+  /* Enkel stjärna/blomma i CSS — ingen emoji som blir grön på iOS/Android */
+  clip-path: polygon(
+    50% 0%,
+    61% 35%,
+    98% 35%,
+    68% 57%,
+    79% 91%,
+    50% 70%,
+    21% 91%,
+    32% 57%,
+    2% 35%,
+    39% 35%
+  );
   transform: translateY(-1px);
 }
 @keyframes marquee {
