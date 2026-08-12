@@ -126,13 +126,19 @@
   letter-spacing: 0.04em;
   padding: 0.28rem 0.7rem;
   border-radius: var(--radius-pill);
-  background: rgba(46, 125, 90, 0.14);
-  color: #2e7d5a;
   white-space: nowrap;
 }
-.service-card__badge--coming {
+.service-card__badge--available {
+  background: rgba(46, 125, 90, 0.14);
+  color: #2e7d5a;
+}
+.service-card__badge--unavailable {
   background: rgba(176, 153, 123, 0.2);
   color: var(--color-bark);
+}
+.service-card__badge--sold_out {
+  background: rgba(169, 72, 47, 0.12);
+  color: #a9482f;
 }
 .service-card__text {
   color: var(--text-secondary);

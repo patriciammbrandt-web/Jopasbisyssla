@@ -1,6 +1,10 @@
 import { StrictMode, lazy, Suspense } from "react";
 import { createRoot } from "react-dom/client";
-import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import {
+  createBrowserRouter,
+  Navigate,
+  RouterProvider,
+} from "react-router-dom";
 import App from "./App";
 import Home from "./pages/Home/Home";
 import "./styles/globals.css";
@@ -19,12 +23,16 @@ function LazyPage({ children }: { children: React.ReactNode }) {
 
 const router = createBrowserRouter([
   {
-    path: "/admin/marknader",
+    path: "/admin",
     element: (
       <LazyPage>
         <MarketsAdmin />
       </LazyPage>
     ),
+  },
+  {
+    path: "/admin/marknader",
+    element: <Navigate to="/admin" replace />,
   },
   {
     path: "/",

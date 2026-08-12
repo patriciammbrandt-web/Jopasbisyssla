@@ -4,10 +4,14 @@ import Reveal from "../../components/Reveal/Reveal";
 import PageHeader from "../../components/PageHeader/PageHeader";
 import SectionHeading from "../../components/SectionHeading/SectionHeading";
 import { usePageMeta } from "../../hooks/usePageMeta";
-import { PRODUCTS, SERVICES } from "../../data/site";
+import { useServices } from "../../hooks/useServices";
+import { serviceStatusLabel } from "../../data/services";
+import { PRODUCTS } from "../../data/site";
 import "./Products.css";
 
 export default function Products() {
+  const { services } = useServices();
+
   usePageMeta({
     title: "Produkter & Tjänster",
     description:
@@ -71,18 +75,16 @@ export default function Products() {
             description="Bina gör nytta långt utanför burken. Här är tjänsterna vi erbjuder utöver honungsförsäljningen."
           />
           <div className="products__services">
-            {SERVICES.map((s, i) => (
+            {services.map((s, i) => (
               <Reveal key={s.id} variant="up" delay={i * 80}>
                 <article className="service-card">
                   <div className="service-card__head">
                     <h3 className="service-card__title">{s.title}</h3>
-                    {s.status === "coming" ? (
-                      <span className="service-card__badge service-card__badge--coming">
-                        Kommande
-                      </span>
-                    ) : (
-                      <span className="service-card__badge">Tillgänglig</span>
-                    )}
+                    <span
+                      className={`service-card__badge service-card__badge--${s.status}`}
+                    >
+                      {serviceStatusLabel(s.status)}
+                    </span>
                   </div>
                   <p className="service-card__text">{s.description}</p>
                 </article>

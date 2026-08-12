@@ -18,6 +18,67 @@
   box-shadow: 0 18px 50px rgba(22, 50, 63, 0.1);
 }
 
+.madmin__section {
+  margin-top: 2rem;
+  padding-top: 1.75rem;
+  border-top: 1px solid rgba(22, 50, 63, 0.1);
+}
+
+.madmin__section:first-of-type {
+  margin-top: 0;
+  padding-top: 0;
+  border-top: none;
+}
+
+.madmin__section-title {
+  margin: 0;
+  font-family: var(--font-display, Georgia, serif);
+  font-size: clamp(1.35rem, 3vw, 1.7rem);
+  font-weight: 500;
+}
+
+.madmin__section-lead {
+  margin: 0.5rem 0 1.25rem;
+  color: #4d5a5f;
+  line-height: 1.55;
+  max-width: 52ch;
+}
+
+.madmin__row--service {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+  align-items: start;
+}
+
+@media (min-width: 640px) {
+  .madmin__row--service {
+    grid-template-columns: 1fr minmax(11rem, 13rem);
+    align-items: center;
+  }
+}
+
+.madmin__service-title {
+  margin: 0;
+  font-size: 1.05rem;
+  font-weight: 600;
+}
+
+.madmin__service-text {
+  margin: 0.4rem 0 0;
+  color: #4d5a5f;
+  font-size: 0.92rem;
+  line-height: 1.5;
+}
+
+.madmin__label--status {
+  margin: 0;
+}
+
+.madmin__select {
+  cursor: pointer;
+}
+
 .madmin__card--narrow {
   max-width: 420px;
 }

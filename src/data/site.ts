@@ -62,44 +62,6 @@ export const PRODUCTS: Product[] = [
   },
 ];
 
-export interface Service {
-  id: string;
-  title: string;
-  description: string;
-  status?: "available" | "coming";
-}
-
-export const SERVICES: Service[] = [
-  {
-    id: "honung",
-    title: "Honung",
-    description:
-      "Lokalproducerad, oförädlad honung från våra egna kupor. Säljs i burk direkt från gården, på marknader och hos utvalda återförsäljare.",
-    status: "available",
-  },
-  {
-    id: "pollinering",
-    title: "Pollinering",
-    description:
-      "Vi placerar ut bisamhällen hos odlare och lantbrukare under blomningen. Fler bin ger bättre skörd – och friskare landskap.",
-    status: "available",
-  },
-  {
-    id: "bisamhallen",
-    title: "Försäljning av bisamhällen",
-    description:
-      "Vi säljer starka, friska bisamhällen till både nya och erfarna biodlare, med rådgivning på vägen för den som är ny i yrket.",
-    status: "available",
-  },
-  {
-    id: "vax",
-    title: "Bivax",
-    description:
-      "Rent bivax från vår egen produktion – till ljus, salvor och vaxdukar. Lanseras inom kort i mindre partier.",
-    status: "coming",
-  },
-];
-
 export interface Retailer {
   id: string;
   name: string;
