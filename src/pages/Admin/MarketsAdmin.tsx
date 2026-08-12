@@ -13,9 +13,20 @@ function emptyMarket(): MarketEvent {
   return { id: newId(), date: "", day: "", title: "", place: "" };
 }
 
+async function verifyPassword(pwd: string): Promise<boolean> {
+  const res = await fetch("/api/markets", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ password: pwd, action: "verify" }),
+  });
+  return res.ok;
+}
+
 export default function MarketsAdmin() {
   const [password, setPassword] = useState("");
   const [authed, setAuthed] = useState(false);
+  const [checkingSession, setCheckingSession] = useState(true);
+  const [loggingIn, setLoggingIn] = useState(false);
   const [markets, setMarkets] = useState<MarketEvent[]>([]);
   const [status, setStatus] = useState<"idle" | "saving" | "ok" | "error">(
     "idle",
@@ -24,11 +35,32 @@ export default function MarketsAdmin() {
 
   useEffect(() => {
     document.title = "Admin · Kommande marknader · Jopas Honung";
-    const saved = sessionStorage.getItem(SESSION_KEY);
-    if (saved) {
-      setPassword(saved);
-      setAuthed(true);
+    let cancelled = false;
+    async function restoreSession() {
+      const saved = sessionStorage.getItem(SESSION_KEY);
+      if (!saved) {
+        if (!cancelled) setCheckingSession(false);
+        return;
+      }
+      try {
+        const ok = await verifyPassword(saved);
+        if (cancelled) return;
+        if (ok) {
+          setPassword(saved);
+          setAuthed(true);
+        } else {
+          sessionStorage.removeItem(SESSION_KEY);
+        }
+      } catch {
+        if (!cancelled) sessionStorage.removeItem(SESSION_KEY);
+      } finally {
+        if (!cancelled) setCheckingSession(false);
+      }
     }
+    void restoreSession();
+    return () => {
+      cancelled = true;
+    };
   }, []);
 
   useEffect(() => {
@@ -72,17 +104,33 @@ export default function MarketsAdmin() {
     [markets],
   );
 
-  function handleLogin(e: FormEvent) {
+  async function handleLogin(e: FormEvent) {
     e.preventDefault();
     if (!password.trim()) {
       setMessage("Skriv in lösenordet.");
       setStatus("error");
       return;
     }
-    sessionStorage.setItem(SESSION_KEY, password);
-    setAuthed(true);
-    setStatus("idle");
+    setLoggingIn(true);
     setMessage(null);
+    setStatus("idle");
+    try {
+      const ok = await verifyPassword(password);
+      if (!ok) {
+        setStatus("error");
+        setMessage("Fel lösenord.");
+        return;
+      }
+      sessionStorage.setItem(SESSION_KEY, password);
+      setAuthed(true);
+      setStatus("idle");
+      setMessage(null);
+    } catch {
+      setStatus("error");
+      setMessage("Kunde inte verifiera lösenordet. Försök igen.");
+    } finally {
+      setLoggingIn(false);
+    }
   }
 
   function logout() {
@@ -153,6 +201,16 @@ export default function MarketsAdmin() {
     }
   }
 
+  if (checkingSession) {
+    return (
+      <div className="madmin">
+        <div className="madmin__card madmin__card--narrow">
+          <p className="madmin__lead">Kontrollerar inloggning…</p>
+        </div>
+      </div>
+    );
+  }
+
   if (!authed) {
     return (
       <div className="madmin">
@@ -171,10 +229,15 @@ export default function MarketsAdmin() {
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
                 className="madmin__input"
+                disabled={loggingIn}
               />
             </label>
-            <button type="submit" className="madmin__btn madmin__btn--primary">
-              Logga in
+            <button
+              type="submit"
+              className="madmin__btn madmin__btn--primary"
+              disabled={loggingIn}
+            >
+              {loggingIn ? "Loggar in…" : "Logga in"}
             </button>
           </form>
           {message && (

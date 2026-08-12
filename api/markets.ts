@@ -52,9 +52,15 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
   try {
     const password = String(req.body?.password ?? "");
     const markets = req.body?.markets as MarketEvent[] | undefined;
+    const action = String(req.body?.action ?? "");
 
     if (password !== requiredEnv("ADMIN_PASSWORD")) {
       return unauthorized(res);
+    }
+
+    // Login-check only — does not write to GitHub.
+    if (action === "verify") {
+      return res.status(200).json({ ok: true });
     }
 
     if (!Array.isArray(markets)) {
