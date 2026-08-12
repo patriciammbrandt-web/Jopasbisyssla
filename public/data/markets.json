@@ -2,24 +2,17 @@
   "markets": [
     {
       "id": "m1",
-      "date": "15 AUG",
+      "date": "15 AUGUSTI",
       "day": "Lördag",
-      "title": "Brukets Marknad, Helsingborg",
+      "title": "Brukets Marknad i Helsingborg",
       "place": "Bruksgatan, 11–15"
     },
     {
       "id": "m2",
-      "date": "28 SEP",
+      "date": "19 SEPTEMBER",
       "day": "Lördag",
-      "title": "Höstmarknad i Klippan",
-      "place": "Centrum, 11–16"
-    },
-    {
-      "id": "m3",
-      "date": "12 OKT",
-      "day": "Söndag",
-      "title": "Bondens marknad",
-      "place": "Helsingborg, 10–14"
+      "title": "Brukets Marknad i Helsingborg",
+      "place": "Bruksgatan, 11–15"
     }
   ]
 }
