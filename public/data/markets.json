@@ -2,14 +2,21 @@
   "markets": [
     {
       "id": "m1",
-      "date": "15 AUGUSTI",
+      "date": "12-13 SEPTEMBER",
+      "day": "Lördag-Söndag",
+      "title": "Medeltidsmarknad Tomarps Kungsgård",
+      "place": "Kvidinge, 10-17"
+    },
+    {
+      "id": "m2",
+      "date": "19 SEPTEMBER",
       "day": "Lördag",
       "title": "Brukets Marknad i Helsingborg",
       "place": "Bruksgatan, 11–15"
     },
     {
-      "id": "m2",
-      "date": "19 SEPTEMBER",
+      "id": "mmsvhx9y2cysb",
+      "date": "24 OKTOBER",
       "day": "Lördag",
       "title": "Brukets Marknad i Helsingborg",
       "place": "Bruksgatan, 11–15"
