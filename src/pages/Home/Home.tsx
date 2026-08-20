@@ -97,7 +97,7 @@ export default function Home() {
             <div className="hero__markets">
               <div className="hero__markets-head">
                 <span className="eyebrow">Kommande marknader</span>
-                <Link to="/aterforsaljare" className="hero__markets-all">
+                <Link to="/aterforsaljare#marknader" className="hero__markets-all">
                   Alla datum <span aria-hidden="true">→</span>
                 </Link>
               </div>

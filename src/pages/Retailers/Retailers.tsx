@@ -171,7 +171,10 @@ export default function Retailers() {
       </section>
 
       {/* Marknader */}
-      <section className="section retailers__markets-section">
+      <section
+        id="marknader"
+        className="section retailers__markets-section"
+      >
         <div className="container">
           <SectionHeading
             eyebrow="Möt oss"

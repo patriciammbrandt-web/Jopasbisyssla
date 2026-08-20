@@ -10,7 +10,7 @@ interface PageMeta {
 }
 
 const BASE_TITLE = "Jopas Honung";
-const SITE_URL = "https://www.jopashonung.se";
+const SITE_URL = "https://www.jopasbisyssla.se";
 
 function upsertMeta(
   selector: string,

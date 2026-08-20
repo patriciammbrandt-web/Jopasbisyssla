@@ -185,6 +185,7 @@
 /* Marknader */
 .retailers__markets-section {
   border-block: 1px solid var(--border-subtle);
+  scroll-margin-top: calc(var(--nav-h) + var(--space-3));
 }
 .retailers__markets {
   display: grid;

@@ -1,4 +1,18 @@
 {
+  "redirects": [
+    {
+      "source": "/:path*",
+      "has": [{ "type": "host", "value": "jopasbisyssla.se" }],
+      "destination": "https://www.jopasbisyssla.se/:path*",
+      "permanent": true
+    },
+    {
+      "source": "/:path*",
+      "has": [{ "type": "host", "value": "jopas-bisyssla.vercel.app" }],
+      "destination": "https://www.jopasbisyssla.se/:path*",
+      "permanent": true
+    }
+  ],
   "rewrites": [
     {
       "source": "/((?!api/|robots\\.txt|sitemap\\.xml|llms\\.txt|favicon\\.svg|.*\\..*).*)",
