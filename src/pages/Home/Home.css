@@ -130,12 +130,21 @@
   }
   .hero__actions .btn {
     width: 100%;
+    white-space: normal;
+    text-wrap: balance;
   }
   .hero__trust {
     gap: var(--space-3);
   }
   .hero__markets {
     padding: var(--space-3);
+  }
+  .hero__market {
+    gap: var(--space-2);
+  }
+  .hero__market-date {
+    flex-basis: 4.25rem;
+    width: 4.25rem;
   }
   .cta-band {
     padding: 1.75rem 1.35rem;
@@ -176,13 +185,16 @@
 /* Hero – marknadskort */
 .hero__media {
   position: relative;
+  width: 100%;
   max-width: 440px;
+  min-width: 0;
   margin-inline: auto;
 }
 .hero__markets {
   position: relative;
   z-index: 3;
   width: 100%;
+  min-width: 0;
   margin: 0 auto;
   padding: var(--space-4);
   background: rgba(251, 247, 236, 0.94);
@@ -204,8 +216,12 @@
   align-items: center;
   justify-content: space-between;
   gap: var(--space-2);
+  min-width: 0;
   padding-bottom: var(--space-3);
   border-bottom: 1px solid var(--border-subtle);
+}
+.hero__markets-head .eyebrow {
+  min-width: 0;
 }
 .hero__markets-all {
   display: inline-flex;
@@ -229,8 +245,9 @@
 }
 .hero__market {
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   gap: var(--space-3);
+  min-width: 0;
   padding: 0.6rem 0;
 }
 .hero__market + .hero__market {
@@ -238,36 +255,47 @@
 }
 .hero__market-date {
   display: inline-flex;
+  flex: 0 0 4.75rem;
   align-items: center;
   justify-content: center;
-  min-width: 58px;
-  padding: 0.35rem 0.5rem;
+  width: 4.75rem;
+  max-width: 38%;
+  min-height: 2.4rem;
+  padding: 0.35rem 0.35rem;
   background: var(--grad-honey);
   border-radius: var(--radius-sm);
   color: var(--color-bark);
+  text-align: center;
 }
 .hero__market-d {
   font-family: var(--font-display);
   font-weight: 600;
-  font-size: var(--fs-sm);
+  font-size: 0.72rem;
   letter-spacing: 0.02em;
+  line-height: 1.15;
+  overflow-wrap: anywhere;
+  word-break: break-word;
 }
 .hero__market-info {
   display: flex;
   flex-direction: column;
+  flex: 1;
   min-width: 0;
 }
 .hero__market-title {
   font-weight: 600;
   font-size: var(--fs-sm);
   color: var(--text-primary);
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
+  line-height: 1.3;
+  overflow-wrap: anywhere;
+  word-break: break-word;
 }
 .hero__market-place {
   font-size: var(--fs-xs);
   color: var(--text-secondary);
+  line-height: 1.35;
+  overflow-wrap: anywhere;
+  word-break: break-word;
 }
 
 /* Marquee – sömlös, täcker hela bredden, aldrig tomt utrymme */
