@@ -5,7 +5,7 @@
       "date": "24 OKTOBER",
       "day": "Lördag",
       "title": "Brukets Marknad i Helsingborg",
-      "place": "Bruksgatan, 11–15"
+      "place": "Bruksgatan, 11-15"
     },
     {
       "id": "mmuk88j6ual3r",
@@ -20,6 +20,13 @@
       "day": "Söndag",
       "title": "Julskyltning i Helsingborg",
       "place": "Bruksgatan 12-18"
+    },
+    {
+      "id": "mmvc0qhv8601g",
+      "date": "13 DECEMBER",
+      "day": "Söndag",
+      "title": "Luciamarknad i Helsingborg",
+      "place": "Bruksgatan 12-15"
     }
   ]
 }
